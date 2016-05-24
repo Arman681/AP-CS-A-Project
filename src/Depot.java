@@ -210,56 +210,75 @@ public class Depot
 				bedroom1_length_field.setLocation(10, 155);
 				bedroom1_width.setLocation(23, 175);
 				bedroom1_width_field.setLocation(10, 195);
+				bedroom1_tile.setLocation(10, 215);
+				bedroom1_carpet.setLocation(10, 235);
+				
 				
 				kitchen.setLocation(115, 110);
 				kitchen_length.setLocation(116, 135);
 				kitchen_length_field.setLocation(107, 155);
 				kitchen_width.setLocation(120, 175);
 				kitchen_width_field.setLocation(107, 195);
+				kitchen_tile.setLocation(107, 215);
+				kitchen_carpet.setLocation(107, 235);
 				
 				livingroom.setLocation(210, 110);
 				livingroom_length.setLocation(219, 135);
 				livingroom_length_field.setLocation(210, 155);
 				livingroom_width.setLocation(223, 175);
 				livingroom_width_field.setLocation(210, 195);
+				livingroom_tile.setLocation(210, 215);
+				livingroom_carpet.setLocation(210, 235);
 				
 				//Column 2
-				bedroom2.setLocation(10, 340);
-				bedroom2_length.setLocation(19, 365);
-				bedroom2_length_field.setLocation(10, 385);
-				bedroom2_width.setLocation(21, 405);
-				bedroom2_width_field.setLocation(10, 425);
+				bedroom2.setLocation(10, 270);
+				bedroom2_length.setLocation(19, 295);
+				bedroom2_length_field.setLocation(10, 315);
+				bedroom2_width.setLocation(21, 335);
+				bedroom2_width_field.setLocation(10, 355);
+				bedroom2_tile.setLocation(10, 375);
+				bedroom2_carpet.setLocation(10, 395);
 				
-				diningroom.setLocation(100, 340);
-				diningroom_length.setLocation(115, 365);
-				diningroom_length_field.setLocation(106, 385);
-				diningroom_width.setLocation(117, 405);
-				diningroom_width_field.setLocation(106, 425);
+				diningroom.setLocation(100, 270);
+				diningroom_length.setLocation(115, 295);
+				diningroom_length_field.setLocation(106, 315);
+				diningroom_width.setLocation(117, 335);
+				diningroom_width_field.setLocation(106, 355);
+				diningroom_tile.setLocation(106, 375);
+				diningroom_carpet.setLocation(106, 395);
 				
-				bathroom1.setLocation(205, 340);
-				bathroom1_length.setLocation(217, 365);
-				bathroom1_length_field.setLocation(208, 385);
-				bathroom1_width.setLocation(220, 405);
-				bathroom1_width_field.setLocation(208, 425);
+				bathroom1.setLocation(205, 270);
+				bathroom1_length.setLocation(217, 295);
+				bathroom1_length_field.setLocation(208, 315);
+				bathroom1_width.setLocation(220, 335);
+				bathroom1_width_field.setLocation(208, 355);
+				bathroom1_tile.setLocation(208, 375);
+				bathroom1_carpet.setLocation(208, 395);
 				
 				//Column 3
-				bedroom3.setLocation(10, 490);
-				bedroom3_length.setLocation(19, 515);
-				bedroom3_length_field.setLocation(10, 535);
-				bedroom3_width.setLocation(21, 555);
-				bedroom3_width_field.setLocation(10, 575);
+				bedroom3.setLocation(10, 430);
+				bedroom3_length.setLocation(19, 455);
+				bedroom3_length_field.setLocation(10, 475);
+				bedroom3_width.setLocation(21, 495);
+				bedroom3_width_field.setLocation(10, 515);
+				bedroom3_tile.setLocation(10, 535);
+				bedroom3_carpet.setLocation(10, 555);
 				
-				familyroom.setLocation(100, 490);
-				familyroom_length.setLocation(115, 515);
-				familyroom_length_field.setLocation(106, 535);
-				familyroom_width.setLocation(119, 555);
-				familyroom_width_field.setLocation(106, 575);
+				familyroom.setLocation(100, 430);
+				familyroom_length.setLocation(115, 455);
+				familyroom_length_field.setLocation(106, 475);
+				familyroom_width.setLocation(119, 495);
+				familyroom_width_field.setLocation(106, 515);
+				familyroom_tile.setLocation(106, 535);
+				familyroom_carpet.setLocation(106, 555);
 				
-				bathroom2.setLocation(205, 490);
-				bathroom2_length.setLocation(217, 515);
-				bathroom2_length_field.setLocation(208, 535);
-				bathroom2_width.setLocation(222, 555);
-				bathroom2_width_field.setLocation(208, 575);
+				bathroom2.setLocation(205, 430);
+				bathroom2_length.setLocation(217, 455);
+				bathroom2_length_field.setLocation(208, 475);
+				bathroom2_width.setLocation(222, 495);
+				bathroom2_width_field.setLocation(208, 515);
+				bathroom2_tile.setLocation(208, 535);
+				bathroom2_carpet.setLocation(208, 555);
 				
 				super.paint(g);
 			}
@@ -277,9 +296,30 @@ public class Depot
 		panel.setOpaque(false);
 		text.setOpaque(false);
 		text1.setOpaque(false);
-		
 
-		//panel.add(round);
+		//Column 1 Buttons
+		panel.add(bedroom1_tile);
+		panel.add(bedroom1_carpet);
+		panel.add(kitchen_tile);
+		panel.add(kitchen_carpet);
+		panel.add(livingroom_tile);
+		panel.add(livingroom_carpet);
+		
+		//Column 2 Buttons
+		panel.add(bedroom2_tile);
+		panel.add(bedroom2_carpet);
+		panel.add(diningroom_tile);
+		panel.add(diningroom_carpet);
+		panel.add(bathroom1_tile);
+		panel.add(bathroom1_carpet);
+		
+		//Column 3 Buttons
+		panel.add(bedroom3_tile);
+		panel.add(bedroom3_carpet);
+		panel.add(familyroom_tile);
+		panel.add(familyroom_carpet);
+		panel.add(bathroom2_tile);
+		panel.add(bathroom2_carpet);
 		
 		panel.add(thsqft);
 		panel.add(thsqft_field);
