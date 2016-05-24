@@ -28,8 +28,8 @@ public class Depot
 /**/static JTextField bedroom1_width_field 			= 	new JTextField(5);				//Bedroom1 Width Text Field
 /**/static JTextField bedroom2_length_field			=	new JTextField(5);				//Bedroom2 Length Text Field
 /**/static JTextField bedroom2_width_field			=	new JTextField(5);				//Bedroom2 Width Text Field
-/**/static JTextField bedroom3_length_field			=	new JTextField();				//Bedroom3 Length Text Field
-/**/static JTextField bedroom3_width_field			=	new JTextField();				//Bedroom3 Width Text Field
+/**/static JTextField bedroom3_length_field			=	new JTextField(5);				//Bedroom3 Length Text Field
+/**/static JTextField bedroom3_width_field			=	new JTextField(5);				//Bedroom3 Width Text Field
 
 /**/static JTextField kitchen_length_field 			= 	new JTextField(5);				//Kitchen Length Text Field  
 /**/static JTextField kitchen_width_field 			= 	new JTextField(5);				//Kitchen Width Text Field
@@ -37,7 +37,7 @@ public class Depot
 /**/static JTextField diningroom_length_field		=	new JTextField(5);				//Dining Room Length Text Field
 /**/static JTextField diningroom_width_field		=	new JTextField(5);				//Dining Room Width Text Field
 
-/**/static JTextField familyroom_length_field		=	new JTextField();				//Family Room Length Text Field
+/**/static JTextField familyroom_length_field		=	new JTextField(5);				//Family Room Length Text Field
 /**/static JTextField familyroom_width_field 		=	new JTextField(5);				//Family Room Width Text Field
 
 /**/static JTextField livingroom_length_field 		= 	new JTextField(5);				//Living Room Length Text Field
@@ -45,8 +45,8 @@ public class Depot
 
 /**/static JTextField bathroom1_length_field		=	new JTextField(5);				//Bathroom1 Length Text Field
 /**/static JTextField bathroom1_width_field			=	new JTextField(5);				//Bathroom1 Width Text Field
-/**/static JTextField bathroom2_length_field			=	new JTextField();			//Bathroom2 Length Text Field
-/**/static JTextField bathroom2_width_field			=	new JTextField();				//Bathroom2 Width Text Field
+/**/static JTextField bathroom2_length_field			=	new JTextField(5);			//Bathroom2 Length Text Field
+/**/static JTextField bathroom2_width_field			=	new JTextField(5);				//Bathroom2 Width Text Field
 
 /**/static JTextField thsqft_field					= 	new JTextField(25);
 /////////////////////////////////////// JTextFields ///////////////////////////////////////
@@ -61,8 +61,8 @@ public class Depot
 /**/static JLabel bedroom2_width					= 	new JLabel("Width");			//Bedroom2 Width
 /**/
 /**/static JLabel bedroom3 							= 	new JLabel("Bedroom 3");
-/**/static JLabel broom3_length 					= 	new JLabel("Length");			//Bedroom3 Length
-/**/static JLabel broom3_width 						= 	new JLabel("Width");			//Bedroom3 Width
+/**/static JLabel bedroom3_length 					= 	new JLabel("Length");			//Bedroom3 Length
+/**/static JLabel bedroom3_width 						= 	new JLabel("Width");			//Bedroom3 Width
 /**/
 /**/static JLabel kitchen 							= 	new JLabel("Kitchen");
 /**/static JLabel kitchen_length 					= 	new JLabel("Length");			//Kitchen Length
@@ -186,11 +186,10 @@ public class Depot
 
 			public void paint(Graphics g) 
 			{
-
-				thsqft.setLocation(380, 110);
-				thsqft_field.setLocation(340, 130);
+				labelSlot1.setLocation(0, 0);							//"Home Renovation Estimate" Banner
 				
-				labelSlot1.setLocation(0, 0);
+				thsqft.setLocation(380, 110);							//"Total Home Square Footage"
+				thsqft_field.setLocation(340, 130);						//"Total Home Square Footage" JTextField
 				
 				bedroom1.setLocation(10, 110);
 				bedroom1_length.setLocation(19,135);
@@ -228,6 +227,24 @@ public class Depot
 				bathroom1_width.setLocation(220, 305);
 				bathroom1_width_field.setLocation(208, 325);
 				
+				bedroom3.setLocation(10, 390);
+				bedroom3_length.setLocation(19, 415);
+				bedroom3_length_field.setLocation(10, 435);
+				bedroom3_width.setLocation(21, 455);
+				bedroom3_width_field.setLocation(10, 475);
+				
+				familyroom.setLocation(100, 390);
+				familyroom_length.setLocation(115, 415);
+				familyroom_length_field.setLocation(106, 435);
+				familyroom_width.setLocation(119, 455);
+				familyroom_width_field.setLocation(106, 475);
+				
+				bathroom2.setLocation(205, 390);
+				bathroom2_length.setLocation(217, 415);
+				bathroom2_length_field.setLocation(208, 435);
+				bathroom2_width.setLocation(222, 455);
+				bathroom2_width_field.setLocation(208, 475);
+				
 				super.paint(g);
 			}
 		};
@@ -248,7 +265,16 @@ public class Depot
 
 		panel.add(thsqft);
 		panel.add(thsqft_field);
-
+		
+		panel.add(sub);													//"Sub Total"
+		panel.add(outputTextsub_field);									//"Sub Total" JTextField
+		panel.add(tax);													//"Tax"
+		panel.add(outputTexttax_field);									//"Tax" JTextField
+		panel.add(gt);													//"Grand Total"
+		panel.add(outputTextGT_field);									//"Grand Total" JTextField
+		panel.add(sc);													//"Surcharge"
+		panel.add(outputTextSC_field);									//"Surcharge" JTextField
+		
 		panel.add(labelSlot1);
 		
 		panel.add(bedroom1);
@@ -288,9 +314,27 @@ public class Depot
 		panel.add(bathroom1_width);
 		panel.add(bathroom1_width_field);
 		
+		panel.add(bedroom3);
+		panel.add(bedroom3_length);
+		panel.add(bedroom3_length_field);
+		panel.add(bedroom3_width);
+		panel.add(bedroom3_width_field);
+		
+		panel.add(familyroom);
+		panel.add(familyroom_length);
+		panel.add(familyroom_length_field);
+		panel.add(familyroom_width);
+		panel.add(familyroom_width_field);
+		
+		panel.add(bathroom2);
+		panel.add(bathroom2_length);
+		panel.add(bathroom2_length_field);
+		panel.add(bathroom2_width);
+		panel.add(bathroom2_width_field);
+		
 		//c.add(panel);
 		frame.pack();
-		frame.setSize(950, 550);
+		frame.setSize(950, 700);
 		frame.setVisible(true );
 		frame.getContentPane().add(panel);
 		frame.setBackground(Color.red);
