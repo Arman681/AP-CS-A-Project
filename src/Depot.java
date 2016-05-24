@@ -16,7 +16,9 @@ import javax.swing.*;
 public class Depot
 	{ 
 	static JLabel labelSlot1;
-	static JLabel labelSlot2;
+	static JLabel paintslot;
+	static JLabel tileslot;
+	static JLabel carpetslot;
 	//static JLabel Livingroom1 = new JLabel("Livingroom 1");
 	
 	/////////////////////////////////////// JTextFields ///////////////////////////////////////
@@ -46,7 +48,7 @@ public class Depot
 /**/
 /**/static JTextField bathroom1_length_field		=	new JTextField(5);				//Bathroom1 Length Text Field
 /**/static JTextField bathroom1_width_field			=	new JTextField(5);				//Bathroom1 Width Text Field
-/**/static JTextField bathroom2_length_field			=	new JTextField(5);			//Bathroom2 Length Text Field
+/**/static JTextField bathroom2_length_field		=	new JTextField(5);			//Bathroom2 Length Text Field
 /**/static JTextField bathroom2_width_field			=	new JTextField(5);				//Bathroom2 Width Text Field
 /**/
 /**/static JTextField thsqft_field					= 	new JTextField(25);
@@ -64,7 +66,7 @@ public class Depot
 /**/
 /**/static JLabel bedroom3 							= 	new JLabel("Bedroom 3");
 /**/static JLabel bedroom3_length 					= 	new JLabel("Length");			//Bedroom3 Length
-/**/static JLabel bedroom3_width 						= 	new JLabel("Width");			//Bedroom3 Width
+/**/static JLabel bedroom3_width 					= 	new JLabel("Width");			//Bedroom3 Width
 /**/
 /**/static JLabel kitchen 							= 	new JLabel("Kitchen");
 /**/static JLabel kitchen_length 					= 	new JLabel("Length");			//Kitchen Length
@@ -103,32 +105,32 @@ public class Depot
 ///////////////////////////////////////// JLabels /////////////////////////////////////////
 	
 ///////////////////////////////////////// JRadioButtons ////////////////////////////////////////
-/**/JRadioButton bedroom1_tile 							= 	new JRadioButton("Tile");			//Bedroom1 Tile Button
-/**/JRadioButton bedroom1_carpet 						= 	new JRadioButton("Carpet");			//Bedroom1 Carpet Button
-/**/JRadioButton bedroom2_tile 							= 	new JRadioButton("Tile");			//Bedroom2 Tile Button
-/**/JRadioButton bedroom2_carpet 						= 	new JRadioButton("Carpet");			//Bedroom2 Carpet Button
-/**/JRadioButton bedroom3_tile 							= 	new JRadioButton("Tile");			//Bedroom3 Tile Button
-/**/JRadioButton bedroom3_carpet 						= 	new JRadioButton("Carpet");			//Bedroom3 Carpet Button
+/**/JRadioButton bedroom1_tile 						= 	new JRadioButton("Tile");			//Bedroom1 Tile Button
+/**/JRadioButton bedroom1_carpet 					= 	new JRadioButton("Carpet");			//Bedroom1 Carpet Button
+/**/JRadioButton bedroom2_tile 						= 	new JRadioButton("Tile");			//Bedroom2 Tile Button
+/**/JRadioButton bedroom2_carpet 					= 	new JRadioButton("Carpet");			//Bedroom2 Carpet Button
+/**/JRadioButton bedroom3_tile 						= 	new JRadioButton("Tile");			//Bedroom3 Tile Button
+/**/JRadioButton bedroom3_carpet 					= 	new JRadioButton("Carpet");			//Bedroom3 Carpet Button
 /**/
-/**/JRadioButton kitchen_tile 							= 	new JRadioButton("Tile");			//Kitchen Tile Button
-/**/JRadioButton kitchen_carpet 						= 	new JRadioButton("Carpet");			//Kitchen Carpet Button
+/**/JRadioButton kitchen_tile 						= 	new JRadioButton("Tile");			//Kitchen Tile Button
+/**/JRadioButton kitchen_carpet 					= 	new JRadioButton("Carpet");			//Kitchen Carpet Button
 /**/
-/**/JRadioButton diningroom_tile 						= 	new JRadioButton("Tile");			//Dining Room Tile Button
-/**/JRadioButton diningroom_carpet 						= 	new JRadioButton("Carpet");			//Dining Room Carpet Button
+/**/JRadioButton diningroom_tile 					= 	new JRadioButton("Tile");			//Dining Room Tile Button
+/**/JRadioButton diningroom_carpet 					= 	new JRadioButton("Carpet");			//Dining Room Carpet Button
 /**/
-/**/JRadioButton familyroom_tile 						= 	new JRadioButton("Tile");			//Family Room Tile Button
-/**/JRadioButton familyroom_carpet 						= 	new JRadioButton("Carpet");			//Family Room Carpet Button
+/**/JRadioButton familyroom_tile 					= 	new JRadioButton("Tile");			//Family Room Tile Button
+/**/JRadioButton familyroom_carpet 					= 	new JRadioButton("Carpet");			//Family Room Carpet Button
 /**/
-/**/JRadioButton livingroom_tile 						= 	new JRadioButton("Tile");			//Living Room Tile Button
-/**/JRadioButton livingroom_carpet 						= 	new JRadioButton("Carpet");			//Living Room Carpet Button
+/**/JRadioButton livingroom_tile 					= 	new JRadioButton("Tile");			//Living Room Tile Button
+/**/JRadioButton livingroom_carpet 					= 	new JRadioButton("Carpet");			//Living Room Carpet Button
 /**/
-/**/JRadioButton bathroom1_tile 						= 	new JRadioButton("Tile");			//Bathroom1 Tile Button
-/**/JRadioButton bathroom1_carpet 						= 	new JRadioButton("Carpet");			//Bathroom1 Carpet Button
-/**/JRadioButton bathroom2_tile 						= 	new JRadioButton("Tile");			//Bathroom2 Tile Button
-/**/JRadioButton bathroom2_carpet 						= 	new JRadioButton("Carpet");			//Bathroom2 Carpet Button
+/**/JRadioButton bathroom1_tile 					= 	new JRadioButton("Tile");			//Bathroom1 Tile Button
+/**/JRadioButton bathroom1_carpet 					= 	new JRadioButton("Carpet");			//Bathroom1 Carpet Button
+/**/JRadioButton bathroom2_tile 					= 	new JRadioButton("Tile");			//Bathroom2 Tile Button
+/**/JRadioButton bathroom2_carpet 					= 	new JRadioButton("Carpet");			//Bathroom2 Carpet Button
 /**/
-/**/JRadioButton thsqft_tile 							= 	new JRadioButton("Tile");			//Total Square Foot Tile Button
-/**/JRadioButton thsqft_carpet 							= 	new JRadioButton("Carpet");			//Total Square Foot Carpet Button
+/**/JRadioButton thsqft_tile 						= 	new JRadioButton("Tile");			//Total Square Foot Tile Button
+/**/JRadioButton thsqft_carpet 						= 	new JRadioButton("Carpet");			//Total Square Foot Carpet Button
 /**/
 /**/ButtonGroup radioGroup;	
 ///////////////////////////////////////// JRadioButtons ////////////////////////////////////////
@@ -142,7 +144,7 @@ public class Depot
 		};
 	public static   String paintnames[]=
 		{
-		"paint.jpg", "paint1.jpg","paint2.jpg","paint3.jpg"
+		"paint.jpg", "paint1.jpg","paint2.jpg","paint3.jpg","paint3.gif"
 		};
 	public static   String tilenames[]=
 		{
@@ -157,21 +159,22 @@ public class Depot
 	//----------------------------------Icons----------------------------------//
 	public static Icon HomeReno[]=
 		{
-			new ImageIcon(carpetnames[0]),
-			new ImageIcon(carpetnames[1]),
-			new ImageIcon(carpetnames[2]),
-			new ImageIcon(paintnames[0]),
-			new ImageIcon(paintnames[1]),
-			new ImageIcon(paintnames[2]),
-			new ImageIcon(paintnames[3]),
-			new ImageIcon(tilenames[0]),
-			new ImageIcon(tilenames[1]),
-			new ImageIcon(tilenames[2]),
-			new ImageIcon(iconnames[0]),
-			new ImageIcon(iconnames[1]),
-			new ImageIcon(iconnames[2]),
-			new ImageIcon(iconnames[3]),
-			new ImageIcon(iconnames[4])
+			new ImageIcon(carpetnames[0]),					//Index[0]
+			new ImageIcon(carpetnames[1]),					//Index[1]
+			new ImageIcon(carpetnames[2]),					//Index[2]
+			new ImageIcon(paintnames[0]),					//Index[3]
+			new ImageIcon(paintnames[1]),					//Index[4]
+			new ImageIcon(paintnames[2]),					//Index[5]
+			new ImageIcon(paintnames[3]),					//Index[6]
+			new ImageIcon(paintnames[4]),					//Index[7]
+			new ImageIcon(tilenames[0]),					//Index[8]
+			new ImageIcon(tilenames[1]),					//Index[9]
+			new ImageIcon(tilenames[2]),					//Index[10]
+			new ImageIcon(iconnames[0]),					//Index[11]
+			new ImageIcon(iconnames[1]),					//Index[12]
+			new ImageIcon(iconnames[2]),					//Index[13]
+			new ImageIcon(iconnames[3]),					//Index[14]
+			new ImageIcon(iconnames[4])						//Index[15]
 			
 		};
 	//----------------------------------Icons----------------------------------//
@@ -201,11 +204,13 @@ public class Depot
 				nlh_field.setLocation(300, 230);
 				
 				pt.setLocation(390, 260);
-				labelSlot2.setLocation(390, 280);
+				paintslot.setLocation(390, 280);
 				
 				ts.setLocation(390, 360);
+				tileslot.setLocation(390, 380);
 				
 				cs.setLocation(390, 460);
+				carpetslot.setLocation(390, 480);
 				
 				sub.setLocation(66, 600);
 				outputTextsub_field.setLocation(6, 620);
@@ -298,11 +303,13 @@ public class Depot
 		
 		JFrame frame = new JFrame( );
 		
-		JTextField text = new JTextField(20);
-		JTextField text1 = new JTextField(20);
+		JTextField text 	= new JTextField(20);
+		JTextField text1 	= new JTextField(20);
 		
-		labelSlot1 = new JLabel(HomeReno[10]);
-		labelSlot2 = new JLabel(HomeReno[6]);
+		labelSlot1			= new JLabel(HomeReno[11]);
+		paintslot			= new JLabel(HomeReno[7]);
+		tileslot			= new JLabel(HomeReno[8]);
+		carpetslot			= new JLabel(HomeReno[0]);
 		
 		panel.setOpaque(false);
 		text.setOpaque(false);
@@ -340,11 +347,13 @@ public class Depot
 		panel.add(nlh_field);
 		
 		panel.add(pt);
-		panel.add(labelSlot2);
+		panel.add(paintslot);
 		
 		panel.add(ts);
+		panel.add(tileslot);
 		
 		panel.add(cs);
+		panel.add(carpetslot);
 		
 		panel.add(sub);													//"Sub Total"
 		panel.add(outputTextsub_field);									//"Sub Total" JTextField
