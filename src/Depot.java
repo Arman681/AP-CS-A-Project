@@ -101,36 +101,36 @@ public class Depot
 /**/static JLabel sc 								= 	new JLabel("Surcharge");		//Surcharge
 ///////////////////////////////////////// JLabels /////////////////////////////////////////
 	
-///////////////////////////////////////// JButtons ////////////////////////////////////////
-/**/JButton bedroom1_tile 							= 	new JButton("Tile");			//Bedroom1 Tile Button
-/**/JButton bedroom1_carpet 						= 	new JButton("Carpet");			//Bedroom1 Carpet Button
-/**/JButton bedroom2_tile 							= 	new JButton("Tile");			//Bedroom2 Tile Button
-/**/JButton bedroom2_carpet 						= 	new JButton("Carpet");			//Bedroom2 Carpet Button
-/**/JButton bedroom3_tile 							= 	new JButton("Tile");			//Bedroom3 Tile Button
-/**/JButton bedroom3_carpet 						= 	new JButton("Carpet");			//Bedroom3 Carpet Button
+///////////////////////////////////////// JRadioButtons ////////////////////////////////////////
+/**/JRadioButton bedroom1_tile 							= 	new JRadioButton("Tile");			//Bedroom1 Tile Button
+/**/JRadioButton bedroom1_carpet 						= 	new JRadioButton("Carpet");			//Bedroom1 Carpet Button
+/**/JRadioButton bedroom2_tile 							= 	new JRadioButton("Tile");			//Bedroom2 Tile Button
+/**/JRadioButton bedroom2_carpet 						= 	new JRadioButton("Carpet");			//Bedroom2 Carpet Button
+/**/JRadioButton bedroom3_tile 							= 	new JRadioButton("Tile");			//Bedroom3 Tile Button
+/**/JRadioButton bedroom3_carpet 						= 	new JRadioButton("Carpet");			//Bedroom3 Carpet Button
 
-/**/JButton kitchen_tile 							= 	new JButton("Tile");			//Kitchen Tile Button
-/**/JButton kitchen_carpet 							= 	new JButton("Carpet");			//Kitchen Carpet Button
+/**/JRadioButton kitchen_tile 							= 	new JRadioButton("Tile");			//Kitchen Tile Button
+/**/JRadioButton kitchen_carpet 						= 	new JRadioButton("Carpet");			//Kitchen Carpet Button
 
-/**/JButton diningroom_tile 						= 	new JButton("Tile");			//Dining Room Tile Button
-/**/JButton diningroom_carpet 						= 	new JButton("Carpet");			//Dining Room Carpet Button
+/**/JRadioButton diningroom_tile 						= 	new JRadioButton("Tile");			//Dining Room Tile Button
+/**/JRadioButton diningroom_carpet 						= 	new JRadioButton("Carpet");			//Dining Room Carpet Button
 
-/**/JButton familyroom_tile 						= 	new JButton("Tile");			//Family Room Tile Button
-/**/JButton familyroom_carpet 						= 	new JButton("Carpet");			//Family Room Carpet Button
+/**/JRadioButton familyroom_tile 						= 	new JRadioButton("Tile");			//Family Room Tile Button
+/**/JRadioButton familyroom_carpet 						= 	new JRadioButton("Carpet");			//Family Room Carpet Button
 
-/**/JButton livingroom_tile 						= 	new JButton("Tile");			//Living Room Tile Button
-/**/JButton livingroom_carpet 						= 	new JButton("Carpet");			//Living Room Carpet Button
+/**/JRadioButton livingroom_tile 						= 	new JRadioButton("Tile");			//Living Room Tile Button
+/**/JRadioButton livingroom_carpet 						= 	new JRadioButton("Carpet");			//Living Room Carpet Button
 
-/**/JButton bathroom1_tile 							= 	new JButton("Tile");			//Bathroom1 Tile Button
-/**/JButton bathroom1_carpet 						= 	new JButton("Carpet");			//Bathroom1 Carpet Button
-/**/JButton bathroom2_tile 							= 	new JButton("Tile");			//Bathroom2 Tile Button
-/**/JButton bathroom2_carpet 						= 	new JButton("Carpet");			//Bathroom2 Carpet Button
+/**/JRadioButton bathroom1_tile 						= 	new JRadioButton("Tile");			//Bathroom1 Tile Button
+/**/JRadioButton bathroom1_carpet 						= 	new JRadioButton("Carpet");			//Bathroom1 Carpet Button
+/**/JRadioButton bathroom2_tile 						= 	new JRadioButton("Tile");			//Bathroom2 Tile Button
+/**/JRadioButton bathroom2_carpet 						= 	new JRadioButton("Carpet");			//Bathroom2 Carpet Button
 
-/**/JButton tsqfttile 								= 	new JButton("Tile");			//Total Square Foot Tile Button
-/**/JButton tsqftcarpet 							= 	new JButton("Carpet");			//Total Square Foot Carpet Button
+/**/JRadioButton tsqfttile 								= 	new JRadioButton("Tile");			//Total Square Foot Tile Button
+/**/JRadioButton tsqftcarpet 							= 	new JRadioButton("Carpet");			//Total Square Foot Carpet Button
 
 /**/ButtonGroup radioGroup;	
-///////////////////////////////////////// JButtons ////////////////////////////////////////
+///////////////////////////////////////// JRadioButtons ////////////////////////////////////////
 		
 	static  Container c;
 
