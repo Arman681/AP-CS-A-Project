@@ -21,7 +21,7 @@ public class Depot
 	static JLabel carpetslot;
 	//static JLabel Livingroom1 = new JLabel("Livingroom 1");
 	
-	/////////////////////////////////////// JTextFields ///////////////////////////////////////
+	//---------------------------------------JTextFields---------------------------------------//
 /**/static JTextField outputTextsub_field			=	new JTextField(15);
 /**/static JTextField outputTexttax_field			=	new JTextField(15);
 /**/static JTextField outputTextGT_field			=	new JTextField(15);				//Grand total
@@ -53,9 +53,9 @@ public class Depot
 /**/
 /**/static JTextField thsqft_field					= 	new JTextField(25);
 /**/static JTextField nlh_field						= 	new JTextField(25);
-/////////////////////////////////////// JTextFields ///////////////////////////////////////
+	//---------------------------------------JTextFields---------------------------------------//
 	
-///////////////////////////////////////// JLabels /////////////////////////////////////////
+	//---------------------------------------JLabels---------------------------------------//
 /**/static JLabel bedroom1							=	new JLabel("Bedroom 1"); 
 /**/static JLabel bedroom1_length 					= 	new JLabel("Length");			//Bedroom1 Length
 /**/static JLabel bedroom1_width 					= 	new JLabel("Width");			//Bedroom1 Width
@@ -102,9 +102,9 @@ public class Depot
 /**/static JLabel tax 								= 	new JLabel("Tax");				//Tax
 /**/static JLabel gt 								= 	new JLabel("Grand Total");		//Grant Total
 /**/static JLabel sc 								= 	new JLabel("Surcharge");		//Surcharge
-///////////////////////////////////////// JLabels /////////////////////////////////////////
+	//---------------------------------------JLabels---------------------------------------//
 	
-///////////////////////////////////////// JRadioButtons ////////////////////////////////////////
+	//---------------------------------------JRadioButtons---------------------------------------//
 /**/JRadioButton bedroom1_tile 						= 	new JRadioButton("Tile");			//Bedroom1 Tile Button
 /**/JRadioButton bedroom1_carpet 					= 	new JRadioButton("Carpet");			//Bedroom1 Carpet Button
 /**/JRadioButton bedroom2_tile 						= 	new JRadioButton("Tile");			//Bedroom2 Tile Button
@@ -133,10 +133,8 @@ public class Depot
 /**/JRadioButton thsqft_carpet 						= 	new JRadioButton("Carpet");			//Total Square Foot Carpet Button
 /**/
 /**/ButtonGroup radioGroup;	
-///////////////////////////////////////// JRadioButtons ////////////////////////////////////////
+	//---------------------------------------JRadioButtons---------------------------------------//
 		
-	static  Container c;
-
 	//----------------------------------Image Names----------------------------------//
 	public static   String carpetnames[]=
 		{
@@ -156,7 +154,7 @@ public class Depot
 		};
 	//----------------------------------Image Names----------------------------------//
 
-	//----------------------------------Icons----------------------------------//
+	//-------------------------------------Icons-------------------------------------//
 	public static Icon HomeReno[]=
 		{
 			new ImageIcon(carpetnames[0]),					//Index[0]
@@ -424,7 +422,7 @@ public class Depot
 		//c.add(panel);
 		frame.pack();
 		frame.setSize(950, 700);
-		frame.setVisible(true );
+		frame.setVisible(true);
 		frame.getContentPane().add(panel);
 		frame.setBackground(Color.red);
 		panel.show();
