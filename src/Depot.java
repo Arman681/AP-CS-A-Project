@@ -128,6 +128,8 @@ public class Depot
 
 /**/JButton tsqfttile 								= 	new JButton("Tile");			//Total Square Foot Tile Button
 /**/JButton tsqftcarpet 							= 	new JButton("Carpet");			//Total Square Foot Carpet Button
+
+/**/ButtonGroup radioGroup;	
 ///////////////////////////////////////// JButtons ////////////////////////////////////////
 		
 	static  Container c;
@@ -173,12 +175,12 @@ public class Depot
 		};
 	//----------------------------------Icons----------------------------------//
 	
-	public Depot() //Begin class
+	public Depot() //Begin constructor
 		{
 
 		//c  =getContentPane();
 		//c.setLayout( new FlowLayout());
-		
+		final JRadioButton round = new JRadioButton("",true);
 		
 	
 	JPanel panel = new JPanel(new FlowLayout())
@@ -186,6 +188,8 @@ public class Depot
 
 			public void paint(Graphics g) 
 			{
+				round.setLocation(50, 650);
+				
 				labelSlot1.setLocation(0, 0);							//"Home Renovation Estimate" Banner
 				
 				thsqft.setLocation(380, 110);							//"Total Home Square Footage"
@@ -200,7 +204,7 @@ public class Depot
 				sc.setLocation(800, 600);
 				outputTextSC_field.setLocation(750, 620);
 				
-				
+				//Column 1
 				bedroom1.setLocation(10, 110);
 				bedroom1_length.setLocation(19,135);
 				bedroom1_length_field.setLocation(10, 155);
@@ -219,41 +223,43 @@ public class Depot
 				livingroom_width.setLocation(223, 175);
 				livingroom_width_field.setLocation(210, 195);
 				
-				bedroom2.setLocation(10, 240);
-				bedroom2_length.setLocation(19, 265);
-				bedroom2_length_field.setLocation(10, 285);
-				bedroom2_width.setLocation(21, 305);
-				bedroom2_width_field.setLocation(10, 325);
+				//Column 2
+				bedroom2.setLocation(10, 340);
+				bedroom2_length.setLocation(19, 365);
+				bedroom2_length_field.setLocation(10, 385);
+				bedroom2_width.setLocation(21, 405);
+				bedroom2_width_field.setLocation(10, 425);
 				
-				diningroom.setLocation(100, 240);
-				diningroom_length.setLocation(115, 265);
-				diningroom_length_field.setLocation(106, 285);
-				diningroom_width.setLocation(117, 305);
-				diningroom_width_field.setLocation(106, 325);
+				diningroom.setLocation(100, 340);
+				diningroom_length.setLocation(115, 365);
+				diningroom_length_field.setLocation(106, 385);
+				diningroom_width.setLocation(117, 405);
+				diningroom_width_field.setLocation(106, 425);
 				
-				bathroom1.setLocation(205, 240);
-				bathroom1_length.setLocation(217, 265);
-				bathroom1_length_field.setLocation(208, 285);
-				bathroom1_width.setLocation(220, 305);
-				bathroom1_width_field.setLocation(208, 325);
+				bathroom1.setLocation(205, 340);
+				bathroom1_length.setLocation(217, 365);
+				bathroom1_length_field.setLocation(208, 385);
+				bathroom1_width.setLocation(220, 405);
+				bathroom1_width_field.setLocation(208, 425);
 				
-				bedroom3.setLocation(10, 390);
-				bedroom3_length.setLocation(19, 415);
-				bedroom3_length_field.setLocation(10, 435);
-				bedroom3_width.setLocation(21, 455);
-				bedroom3_width_field.setLocation(10, 475);
+				//Column 3
+				bedroom3.setLocation(10, 490);
+				bedroom3_length.setLocation(19, 515);
+				bedroom3_length_field.setLocation(10, 535);
+				bedroom3_width.setLocation(21, 555);
+				bedroom3_width_field.setLocation(10, 575);
 				
-				familyroom.setLocation(100, 390);
-				familyroom_length.setLocation(115, 415);
-				familyroom_length_field.setLocation(106, 435);
-				familyroom_width.setLocation(119, 455);
-				familyroom_width_field.setLocation(106, 475);
+				familyroom.setLocation(100, 490);
+				familyroom_length.setLocation(115, 515);
+				familyroom_length_field.setLocation(106, 535);
+				familyroom_width.setLocation(119, 555);
+				familyroom_width_field.setLocation(106, 575);
 				
-				bathroom2.setLocation(205, 390);
-				bathroom2_length.setLocation(217, 415);
-				bathroom2_length_field.setLocation(208, 435);
-				bathroom2_width.setLocation(222, 455);
-				bathroom2_width_field.setLocation(208, 475);
+				bathroom2.setLocation(205, 490);
+				bathroom2_length.setLocation(217, 515);
+				bathroom2_length_field.setLocation(208, 535);
+				bathroom2_width.setLocation(222, 555);
+				bathroom2_width_field.setLocation(208, 575);
 				
 				super.paint(g);
 			}
@@ -273,6 +279,8 @@ public class Depot
 		text1.setOpaque(false);
 		
 
+		//panel.add(round);
+		
 		panel.add(thsqft);
 		panel.add(thsqft_field);
 		
