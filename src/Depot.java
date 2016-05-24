@@ -195,38 +195,38 @@ public class Depot
 				bedroom1.setLocation(10, 110);
 				bedroom1_length.setLocation(19,135);
 				bedroom1_length_field.setLocation(10, 155);
-				bedroom1_width.setLocation(19, 175);
+				bedroom1_width.setLocation(23, 175);
 				bedroom1_width_field.setLocation(10, 195);
 				
 				kitchen.setLocation(110, 110);
 				kitchen_length.setLocation(116, 135);
 				kitchen_length_field.setLocation(107, 155);
-				kitchen_width.setLocation(116, 175);
+				kitchen_width.setLocation(120, 175);
 				kitchen_width_field.setLocation(107, 195);
 				
 				livingroom.setLocation(210, 110);
 				livingroom_length.setLocation(219, 135);
 				livingroom_length_field.setLocation(210, 155);
-				livingroom_width.setLocation(219, 175);
+				livingroom_width.setLocation(223, 175);
 				livingroom_width_field.setLocation(210, 195);
 				
-				bedroom2.setLocation();
-				bedroom2_length.setLocation();
-				bedroom2_length_field.setLocation();
-				bedroom2_width.setLocation();
-				bedroom2_width_field.setLocation();
+				bedroom2.setLocation(10, 240);
+				bedroom2_length.setLocation(19, 265);
+				bedroom2_length_field.setLocation(10, 285);
+				bedroom2_width.setLocation(21, 305);
+				bedroom2_width_field.setLocation(10, 325);
 				
-				diningroom.setLocation();
-				diningroom_length.setLocation();
-				diningroom_length_field.setLocation();
-				diningroom_width.setLocation();
-				diningroom_width_field.setLocation();
+				diningroom.setLocation(100, 240);
+				diningroom_length.setLocation(115, 265);
+				diningroom_length_field.setLocation(106, 285);
+				diningroom_width.setLocation(117, 305);
+				diningroom_width_field.setLocation(106, 325);
 				
-				bathroom1.setLocation();
-				bathroom1_length.setLocation()
-				bathroom1_length_field.setLocation();
-				bathroom1_width.setLocation();
-				bathroom1_width_field.setLocation();
+				bathroom1.setLocation(205, 240);
+				bathroom1_length.setLocation(217, 265);
+				bathroom1_length_field.setLocation(208, 285);
+				bathroom1_width.setLocation(220, 305);
+				bathroom1_width_field.setLocation(208, 325);
 				
 				super.paint(g);
 			}
