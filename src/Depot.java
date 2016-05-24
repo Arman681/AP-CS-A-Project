@@ -16,7 +16,8 @@ import javax.swing.*;
 public class Depot
 	{ 
 	static JLabel labelSlot1;
-	static JLabel Livingroom1 = new JLabel("Livingroom 1");
+	static JLabel labelSlot2;
+	//static JLabel Livingroom1 = new JLabel("Livingroom 1");
 	
 	/////////////////////////////////////// JTextFields ///////////////////////////////////////
 /**/static JTextField outputTextsub_field			=	new JTextField(15);
@@ -30,25 +31,26 @@ public class Depot
 /**/static JTextField bedroom2_width_field			=	new JTextField(5);				//Bedroom2 Width Text Field
 /**/static JTextField bedroom3_length_field			=	new JTextField(5);				//Bedroom3 Length Text Field
 /**/static JTextField bedroom3_width_field			=	new JTextField(5);				//Bedroom3 Width Text Field
-
+/**/
 /**/static JTextField kitchen_length_field 			= 	new JTextField(5);				//Kitchen Length Text Field  
 /**/static JTextField kitchen_width_field 			= 	new JTextField(5);				//Kitchen Width Text Field
-
+/**/
 /**/static JTextField diningroom_length_field		=	new JTextField(5);				//Dining Room Length Text Field
 /**/static JTextField diningroom_width_field		=	new JTextField(5);				//Dining Room Width Text Field
-
+/**/
 /**/static JTextField familyroom_length_field		=	new JTextField(5);				//Family Room Length Text Field
 /**/static JTextField familyroom_width_field 		=	new JTextField(5);				//Family Room Width Text Field
-
+/**/
 /**/static JTextField livingroom_length_field 		= 	new JTextField(5);				//Living Room Length Text Field
 /**/static JTextField livingroom_width_field 		= 	new JTextField(5);				//Living Room Width Text Field
-
+/**/
 /**/static JTextField bathroom1_length_field		=	new JTextField(5);				//Bathroom1 Length Text Field
 /**/static JTextField bathroom1_width_field			=	new JTextField(5);				//Bathroom1 Width Text Field
 /**/static JTextField bathroom2_length_field			=	new JTextField(5);			//Bathroom2 Length Text Field
 /**/static JTextField bathroom2_width_field			=	new JTextField(5);				//Bathroom2 Width Text Field
-
+/**/
 /**/static JTextField thsqft_field					= 	new JTextField(25);
+/**/static JTextField nlh_field						= 	new JTextField(25);
 /////////////////////////////////////// JTextFields ///////////////////////////////////////
 	
 ///////////////////////////////////////// JLabels /////////////////////////////////////////
@@ -89,7 +91,6 @@ public class Depot
 /**/static JLabel bathroom2_width 					= 	new JLabel("Width");			//Bathroom2 Width
 /**/
 /**/static JLabel thsqft 							= 	new JLabel ("Total Home Square Footage");
-/**/
 /**/static JLabel nlh 								= 	new JLabel("Number of Labor Hours");
 /**/static JLabel pt 								= 	new JLabel("Paint Type");
 /**/static JLabel ts 								= 	new JLabel("Tile Style");
@@ -108,27 +109,27 @@ public class Depot
 /**/JRadioButton bedroom2_carpet 						= 	new JRadioButton("Carpet");			//Bedroom2 Carpet Button
 /**/JRadioButton bedroom3_tile 							= 	new JRadioButton("Tile");			//Bedroom3 Tile Button
 /**/JRadioButton bedroom3_carpet 						= 	new JRadioButton("Carpet");			//Bedroom3 Carpet Button
-
+/**/
 /**/JRadioButton kitchen_tile 							= 	new JRadioButton("Tile");			//Kitchen Tile Button
 /**/JRadioButton kitchen_carpet 						= 	new JRadioButton("Carpet");			//Kitchen Carpet Button
-
+/**/
 /**/JRadioButton diningroom_tile 						= 	new JRadioButton("Tile");			//Dining Room Tile Button
 /**/JRadioButton diningroom_carpet 						= 	new JRadioButton("Carpet");			//Dining Room Carpet Button
-
+/**/
 /**/JRadioButton familyroom_tile 						= 	new JRadioButton("Tile");			//Family Room Tile Button
 /**/JRadioButton familyroom_carpet 						= 	new JRadioButton("Carpet");			//Family Room Carpet Button
-
+/**/
 /**/JRadioButton livingroom_tile 						= 	new JRadioButton("Tile");			//Living Room Tile Button
 /**/JRadioButton livingroom_carpet 						= 	new JRadioButton("Carpet");			//Living Room Carpet Button
-
+/**/
 /**/JRadioButton bathroom1_tile 						= 	new JRadioButton("Tile");			//Bathroom1 Tile Button
 /**/JRadioButton bathroom1_carpet 						= 	new JRadioButton("Carpet");			//Bathroom1 Carpet Button
 /**/JRadioButton bathroom2_tile 						= 	new JRadioButton("Tile");			//Bathroom2 Tile Button
 /**/JRadioButton bathroom2_carpet 						= 	new JRadioButton("Carpet");			//Bathroom2 Carpet Button
-
-/**/JRadioButton tsqfttile 								= 	new JRadioButton("Tile");			//Total Square Foot Tile Button
-/**/JRadioButton tsqftcarpet 							= 	new JRadioButton("Carpet");			//Total Square Foot Carpet Button
-
+/**/
+/**/JRadioButton thsqft_tile 							= 	new JRadioButton("Tile");			//Total Square Foot Tile Button
+/**/JRadioButton thsqft_carpet 							= 	new JRadioButton("Carpet");			//Total Square Foot Carpet Button
+/**/
 /**/ButtonGroup radioGroup;	
 ///////////////////////////////////////// JRadioButtons ////////////////////////////////////////
 		
@@ -191,9 +192,20 @@ public class Depot
 				round.setLocation(50, 650);
 				
 				labelSlot1.setLocation(0, 0);							//"Home Renovation Estimate" Banner
+								
+				thsqft.setLocation(370, 110);							//"Total Home Square Footage"
+				thsqft_field.setLocation(300, 130);						//"Total Home Square Footage" JTextField
+				thsqft_tile.setLocation(300, 150);
+				thsqft_carpet.setLocation(300, 170);
+				nlh.setLocation(370, 210);
+				nlh_field.setLocation(300, 230);
 				
-				thsqft.setLocation(380, 110);							//"Total Home Square Footage"
-				thsqft_field.setLocation(340, 130);						//"Total Home Square Footage" JTextField
+				pt.setLocation(390, 260);
+				labelSlot2.setLocation(390, 280);
+				
+				ts.setLocation(390, 360);
+				
+				cs.setLocation(390, 460);
 				
 				sub.setLocation(66, 600);
 				outputTextsub_field.setLocation(6, 620);
@@ -286,12 +298,11 @@ public class Depot
 		
 		JFrame frame = new JFrame( );
 		
-		
-
 		JTextField text = new JTextField(20);
 		JTextField text1 = new JTextField(20);
 		
 		labelSlot1 = new JLabel(HomeReno[10]);
+		labelSlot2 = new JLabel(HomeReno[6]);
 		
 		panel.setOpaque(false);
 		text.setOpaque(false);
@@ -323,6 +334,17 @@ public class Depot
 		
 		panel.add(thsqft);
 		panel.add(thsqft_field);
+		panel.add(thsqft_tile);
+		panel.add(thsqft_carpet);
+		panel.add(nlh);
+		panel.add(nlh_field);
+		
+		panel.add(pt);
+		panel.add(labelSlot2);
+		
+		panel.add(ts);
+		
+		panel.add(cs);
 		
 		panel.add(sub);													//"Sub Total"
 		panel.add(outputTextsub_field);									//"Sub Total" JTextField
