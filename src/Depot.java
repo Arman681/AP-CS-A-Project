@@ -19,10 +19,10 @@ public class Depot
 	static JLabel Livingroom1 = new JLabel("Livingroom 1");
 	
 	/////////////////////////////////////// JTextFields ///////////////////////////////////////
-/**/static JTextField outputTextsub_field			=	new JTextField();
-/**/static JTextField outputTexttax_field			=	new JTextField();
-/**/static JTextField outputTextGT_field			=	new JTextField();				//Grand total
-/**/static JTextField outputTextSC_field			=	new JTextField();
+/**/static JTextField outputTextsub_field			=	new JTextField(15);
+/**/static JTextField outputTexttax_field			=	new JTextField(15);
+/**/static JTextField outputTextGT_field			=	new JTextField(15);				//Grand total
+/**/static JTextField outputTextSC_field			=	new JTextField(15);
 /**/
 /**/static JTextField bedroom1_length_field			= 	new JTextField(5);				//Bedroom1 Length Text Field
 /**/static JTextField bedroom1_width_field 			= 	new JTextField(5);				//Bedroom1 Width Text Field
@@ -191,13 +191,23 @@ public class Depot
 				thsqft.setLocation(380, 110);							//"Total Home Square Footage"
 				thsqft_field.setLocation(340, 130);						//"Total Home Square Footage" JTextField
 				
+				sub.setLocation(66, 600);
+				outputTextsub_field.setLocation(6, 620);
+				tax.setLocation(310, 600);
+				outputTexttax_field.setLocation(240, 620);
+				gt.setLocation(550, 600);
+				outputTextGT_field.setLocation(500, 620);
+				sc.setLocation(800, 600);
+				outputTextSC_field.setLocation(750, 620);
+				
+				
 				bedroom1.setLocation(10, 110);
 				bedroom1_length.setLocation(19,135);
 				bedroom1_length_field.setLocation(10, 155);
 				bedroom1_width.setLocation(23, 175);
 				bedroom1_width_field.setLocation(10, 195);
 				
-				kitchen.setLocation(110, 110);
+				kitchen.setLocation(115, 110);
 				kitchen_length.setLocation(116, 135);
 				kitchen_length_field.setLocation(107, 155);
 				kitchen_width.setLocation(120, 175);
