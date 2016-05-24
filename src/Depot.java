@@ -15,6 +15,12 @@ import javax.swing.*;
 
 public class Depot
 	{ 
+	
+	static JTextArea display = new JTextArea(20, 30);
+	static JScrollPane scroll = new JScrollPane(display);
+	//display.setEditable(false);
+	
+	
 	static JLabel labelSlot1;
 	static JLabel paintslot;
 	static JLabel tileslot;
@@ -295,6 +301,10 @@ public class Depot
 				bathroom2_tile.setLocation(208, 535);
 				bathroom2_carpet.setLocation(208, 555);
 				
+				scroll.setLocation(600,105);
+				scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
+				scroll.setForeground(Color.PINK);
+				
 				super.paint(g);
 			}
 		};
@@ -313,6 +323,8 @@ public class Depot
 		text.setOpaque(false);
 		text1.setOpaque(false);
 
+		panel.add(scroll);
+		
 		//Column 1 Buttons
 		panel.add(bedroom1_tile);
 		panel.add(bedroom1_carpet);
