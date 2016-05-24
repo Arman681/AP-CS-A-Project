@@ -15,13 +15,15 @@ import javax.swing.*;
 
 public class Depot
 { 
-	static JTextArea display = new JTextArea(20, 30);
+	static JTextArea display = new JTextArea(15, 30);
 	static JScrollPane scroll = new JScrollPane(display);	
 	
 	static JLabel labelSlot1;
 	static JLabel paintslot;
 	static JLabel tileslot;
 	static JLabel carpetslot;
+	static JLabel calculatorslot;
+	static JLabel printerslot;
 	//static JLabel Livingroom1 = new JLabel("Livingroom 1");
 	
 	//---------------------------------------JTextFields---------------------------------------//
@@ -187,6 +189,8 @@ public class Depot
 				{
 				
 					labelSlot1.setLocation(0, 0);							//"Home Renovation Estimate" Banner
+					calculatorslot.setLocation(600, 420);
+					printerslot.setLocation(800, 420);
 								
 					thsqft.setLocation(370, 110);							//"Total Home Square Footage"
 					thsqft_field.setLocation(300, 130);						//"Total Home Square Footage" JTextField
@@ -306,11 +310,15 @@ public class Depot
 			paintslot			= new JLabel(HomeReno[7]);
 			tileslot			= new JLabel(HomeReno[8]);
 			carpetslot			= new JLabel(HomeReno[0]);
+			calculatorslot		= new JLabel(HomeReno[13]);
+			printerslot			= new JLabel(HomeReno[15]);
 			
 			panel.setOpaque(false);
 			display.setEditable(false);
 
 			panel.add(labelSlot1);
+			panel.add(calculatorslot);
+			panel.add(printerslot);
 			panel.add(scroll);
 		
 			panel.add(thsqft);
