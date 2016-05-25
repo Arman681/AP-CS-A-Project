@@ -7,10 +7,21 @@ public class Depot
 { 
 	static JTextArea display = new JTextArea(15, 30);
 	static JScrollPane scroll = new JScrollPane(display);
-	static String[] paint_types = new String[] {"Basic..........$19.97", 
-										 "Deluxe..........&26.97",
-										 "Premium..........$34.95"};
-	static JComboBox<String> tilelist = new JComboBox<String>(paint_types);
+	
+	static String[] paint_types_list		= new String[] {"Basic..........$19.97", 
+										 					"Deluxe..........&26.97",
+										 					"Premium..........$34.95"};
+	static JComboBox<String> paint_types	= new JComboBox<String>(paint_types_list);
+	
+	static String[] tile_styles_list		= new String[] {"Mosaic..........$3.88",
+															"Wood..........$3.95",
+															"Ceramic..........$4.04"};
+	static JComboBox<String> tile_styles	= new JComboBox<String>(tile_styles_list);
+	
+	static String[] carpet_styles_list		= new String[] {"Flat.........$4.92",
+															"Ridges..........$6.25",
+															"Plush..........$8.25"};
+	static JComboBox<String> carpet_styles	= new JComboBox<String>(carpet_styles_list);
 	
 	static JLabel labelSlot1;
 	static JLabel paintslot;
@@ -186,7 +197,11 @@ public class Depot
 					labelSlot1.setLocation(0, 0);							//"Home Renovation Estimate" Banner
 					calculatorslot.setLocation(600, 420);
 					printerslot.setLocation(800, 420);
-								
+					
+					paint_types.setLocation(355, 320);
+					tile_styles.setLocation(355, 420);
+					carpet_styles.setLocation(355, 520);
+					
 					thsqft.setLocation(370, 110);							//"Total Home Square Footage"
 					thsqft_field.setLocation(300, 130);						//"Total Home Square Footage" JTextField
 					thsqft_tile.setLocation(300, 150);
@@ -315,6 +330,10 @@ public class Depot
 			panel.add(calculatorslot);
 			panel.add(printerslot);
 			panel.add(scroll);
+
+			panel.add(paint_types);
+			panel.add(tile_styles);
+			panel.add(carpet_styles);
 		
 			panel.add(thsqft);
 			panel.add(thsqft_field);
@@ -427,9 +446,7 @@ public class Depot
 			panel.add(bathroom2_width);
 			panel.add(bathroom2_width_field);
 			//------------------------------Column 3 Labels & Fields------------------------------//
-			
-			
-			
+						
 			frame.pack();
 			frame.setSize(950, 700);
 			frame.setVisible(true);
