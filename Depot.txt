@@ -112,6 +112,9 @@ public class Depot
 /**/static JLabel tax 								= 	new JLabel("Tax");				//Tax
 /**/static JLabel gt 								= 	new JLabel("Grand Total");		//Grant Total
 /**/static JLabel sc 								= 	new JLabel("Surcharge");		//Surcharge
+/**/
+/**/static JLabel calcprice							= 	new JLabel("Calculate Price");
+/**/static JLabel printestimate						=	new JLabel("Print Estimate");
 	//---------------------------------------JLabels---------------------------------------//
 	
 	//---------------------------------------JRadioButtons---------------------------------------//
@@ -195,8 +198,8 @@ public class Depot
 				{
 				
 					labelSlot1.setLocation(0, 0);							//"Home Renovation Estimate" Banner
-					calculatorslot.setLocation(600, 420);
-					printerslot.setLocation(800, 420);
+					calculatorslot.setLocation(550, 420);
+					printerslot.setLocation(750, 420);
 					
 					paint_types.setLocation(355, 320);
 					tile_styles.setLocation(355, 420);
@@ -209,6 +212,9 @@ public class Depot
 					nlh.setLocation(370, 210);
 					nlh_field.setLocation(300, 230);
 				
+					calcprice.setLocation(625, 445);
+					printestimate.setLocation(825, 445);
+					
 					pt.setLocation(390, 260);
 					paintslot.setLocation(390, 280);
 				
@@ -341,6 +347,9 @@ public class Depot
 			panel.add(thsqft_carpet);
 			panel.add(nlh);
 			panel.add(nlh_field);
+			
+			panel.add(calcprice);
+			panel.add(printestimate);
 		
 			panel.add(pt);
 			panel.add(paintslot);
