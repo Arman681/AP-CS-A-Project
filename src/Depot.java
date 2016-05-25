@@ -1,14 +1,4 @@
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Window;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.Scrollbar;
 import javax.swing.*;
 
 //class file works with out main
@@ -16,7 +6,11 @@ import javax.swing.*;
 public class Depot
 { 
 	static JTextArea display = new JTextArea(15, 30);
-	static JScrollPane scroll = new JScrollPane(display);	
+	static JScrollPane scroll = new JScrollPane(display);
+	static String[] paint_types = new String[] {"Basic..........$19.97", 
+										 "Deluxe..........&26.97",
+										 "Premium..........$34.95"};
+	static JComboBox<String> tilelist = new JComboBox<String>(paint_types);
 	
 	static JLabel labelSlot1;
 	static JLabel paintslot;
@@ -181,6 +175,7 @@ public class Depot
 	};
 	//----------------------------------Icons----------------------------------//
 	
+	@SuppressWarnings({ "deprecation", "serial" })
 	public Depot() //Begin constructor
 	{		
 			JPanel panel = new JPanel(new FlowLayout())
@@ -315,7 +310,7 @@ public class Depot
 			
 			panel.setOpaque(false);
 			display.setEditable(false);
-
+			
 			panel.add(labelSlot1);
 			panel.add(calculatorslot);
 			panel.add(printerslot);
@@ -433,11 +428,14 @@ public class Depot
 			panel.add(bathroom2_width_field);
 			//------------------------------Column 3 Labels & Fields------------------------------//
 			
+			
+			
 			frame.pack();
 			frame.setSize(950, 700);
 			frame.setVisible(true);
 			frame.getContentPane().add(panel);
 			frame.setBackground(Color.red);
 			panel.show();
+			
 	}// end constructor
 }// end class
