@@ -36,8 +36,8 @@ public class Depot implements ActionListener
 /**/static JTextField outputTextGT_field			=	new JTextField(15);				//Grand total
 /**/static JTextField outputTextSC_field			=	new JTextField(15);
 /**/
-/**/static JButton butt                             =   new JButton();
-/**/static JButton butt2                            =   new JButton();
+/**/static JButton butt                             =   new JButton();					//Calculator Button
+/**/static JButton butt2                            =   new JButton();					//Printer Button
 /**/static JTextField bedroom1_length_field			= 	new JTextField(5);				//Bedroom1 Length Text Field
 /**/static JTextField bedroom1_width_field			= 	new JTextField(5);				//Bedroom1 Width Text Field
 /**/static JTextField bedroom2_length_field			=	new JTextField(5);				//Bedroom2 Length Text Field
@@ -177,6 +177,7 @@ public class Depot implements ActionListener
 		"1.jpg","2.jpg","Calculator.gif","header.jpg","Printer.gif"
 	};
 	//----------------------------------Image Names----------------------------------//
+JFrame PrintEstimate = new JFrame();
 
 	//-------------------------------------Icons-------------------------------------//
 	public static Icon HomeReno[]=
@@ -207,23 +208,27 @@ public class Depot implements ActionListener
 	
 	@SuppressWarnings({ "deprecation", "serial" })
 	public Depot() //Begin constructor
-	{		
+	{		//A thanksgiving miracle - SNL
 		JPanel panel = new JPanel(new FlowLayout())
+	
 		{
 			public void paint(Graphics g) 
 			{
 				labelSlot1.setLocation(0, 0);							//"Home Renovation Estimate" Banner
-					
+				
 				paint_types.setLocation(355, 320);
+				paint_types.setSize(160, 25);
 				tile_styles.setLocation(355, 420);
+				tile_styles.setSize(155, 25);
 				carpet_styles.setLocation(355, 520);
-
-				butt.setLocation(515,350);
+				carpet_styles.setSize(148, 25);
+				
+				butt.setLocation(540,350);
 				butt.setSize(200,250);
 				butt.setIcon(HomeReno[13]);
 				butt.setText("Calculate Price");
 					
-				butt2.setLocation(720, 350);
+				butt2.setLocation(745, 350);
 				butt2.setSize(200,250);
 				butt2.setIcon(HomeReno[15]);
 				butt2.setText("Print Estimate");
@@ -325,6 +330,8 @@ public class Depot implements ActionListener
 				familyroom_tile.setLocation(106, 535);
 				familyroom_carpet.setLocation(106, 555);
 				
+				
+				
 				bathroom2.setLocation(205, 430);
 				bathroom2_length.setLocation(217, 455);
 				bathroom2_length_field.setLocation(208, 475);
@@ -337,7 +344,6 @@ public class Depot implements ActionListener
 				scroll.setLocation(600,105);
 				scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
 				scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-				scroll.setForeground(Color.PINK);
 				
 				super.paint(g);
 			}
@@ -349,7 +355,7 @@ public class Depot implements ActionListener
 		paintslot			= new JLabel(HomeReno[7]);
 		tileslot			= new JLabel(HomeReno[8]);
 		carpetslot			= new JLabel(HomeReno[0]);
-		
+	
 		panel.setOpaque(false);
 		display.setEditable(false);
 			
@@ -363,14 +369,25 @@ public class Depot implements ActionListener
 		butt2.addActionListener(
 				new ActionListener(){
 					public void actionPerformed(ActionEvent e)
-					{
-							
+					{	
+						
+						JLabel pic = new JLabel(HomeReno[14]);
+						pic.setSize(600,100);
+						pic.setLocation(0,0);
+						
+						PrintEstimate.getContentPane().add(pic);
+						PrintEstimate.setSize(600,1000);	
+					
+						PrintEstimate.show();
+						PrintEstimate.setVisible(true);
+						
 					}
 				}		
 		);
 			
 		bedroom1Group.add(bedroom1_tile);
 		bedroom1Group.add(bedroom1_carpet);
+		
 		bedroom2Group.add(bedroom2_tile);
 		bedroom2Group.add(bedroom2_carpet);
 		bedroom3Group.add(bedroom3_tile);
@@ -510,11 +527,13 @@ public class Depot implements ActionListener
 		//------------------------------Column 3 Labels & Fields------------------------------//
 						
 		frame.pack();
-		frame.setSize(950, 700);
+		frame.setSize(965, 700);
 		frame.setVisible(true);
 		frame.getContentPane().add(panel);
 		frame.setBackground(Color.red);
 		panel.show();
-			
+	
+		
 	}// end constructor
+	
 }// end class
