@@ -6,73 +6,75 @@ import java.awt.event.*;
 
 public class Depot implements ActionListener
 { 
-	String str = "";
-	static double carpetMult = 0;
-	static double tilesMult = 0;
-	static double paintMult = 0;
-	static double Sub_Total = 0;
-	static double tax = 0;
-	static double surcharge = 0;
-	static double grand_total = 0;
+	//--------------------------------Instance Variables for ActionPreformed(ActionEvent e)--------------------------------//
+/**/String str								= "";
+/**/static double carpetMult 				= 0;
+/**/static double tilesMult 				= 0;
+/**/static double paintMult 				= 0;
+/**/static double Sub_Total 				= 0;
+/**/static double tax 						= 0;
+/**/static double surcharge 				= 0;
+/**/static double grand_total 				= 0;
+/**/
+/**/static double bedroom1Total 			= 0;
+/**/static double bedroom1_floor_total 		= 0;
+/**/static double bedroom1_paint_total 		= 0;
+/**/static double bedroom1_floorarea 		= 0;
+/**/static double bedroom1_wallarea 		= 0;
+/**/
+/**/static double bedroom2Total 			= 0;
+/**/static double bedroom2_floor_total 		= 0;
+/**/static double bedroom2_paint_total 		= 0;
+/**/static double bedroom2_floorarea 		= 0;
+/**/static double bedroom2_wallarea 		= 0;
+/**/
+/**/static double bedroom3Total 			= 0;
+/**/static double bedroom3_floor_total 		= 0;
+/**/static double bedroom3_paint_total 		= 0;
+/**/static double bedroom3_floorarea 		= 0;
+/**/static double bedroom3_wallarea 		= 0;
+/**/
+/**/static double kitchenTotal 				= 0;
+/**/static double kitchen_floor_total 		= 0;
+/**/static double kitchen_paint_total 		= 0;
+/**/static double kitchen_floorarea 		= 0;
+/**/static double kitchen_wallarea 			= 0;
+/**/
+/**/static double diningroomTotal 			= 0;
+/**/static double diningroom_floor_total 	= 0;
+/**/static double diningroom_paint_total 	= 0;
+/**/static double diningroom_floorarea 		= 0;
+/**/static double diningroom_wallarea 		= 0;
+/**/
+/**/static double familyroomTotal 			= 0;
+/**/static double familyroom_floor_total 	= 0;
+/**/static double familyroom_paint_total 	= 0;
+/**/static double familyroom_floorarea 		= 0;
+/**/static double familyroom_wallarea 		= 0;
+/**/
+/**/static double livingroomTotal 			= 0;
+/**/static double livingroom_floor_total 	= 0;
+/**/static double livingroom_paint_total 	= 0;
+/**/static double livingroom_floorarea 		= 0;
+/**/static double livingroom_wallarea 		= 0;
+/**/
+/**/static double bathroom1Total 			= 0;
+/**/static double bathroom1_floor_total 	= 0;
+/**/static double bathroom1_paint_total 	= 0;
+/**/static double bathroom1_floorarea 		= 0;
+/**/static double bathroom1_wallarea 		= 0;
+/**/
+/**/static double bathroom2Total 			= 0;
+/**/static double bathroom2_floor_total 	= 0;
+/**/static double bathroom2_paint_total 	= 0;
+/**/static double bathroom2_floorarea 		= 0;
+/**/static double bathroom2_wallarea 		= 0;
+/**/
+/**/static double thsqftTotal 				= 0;
+	//--------------------------------Instance Variables for ActionPreformed(ActionEvent e)--------------------------------//
 	
-	static double bedroom1Total = 0;
-	static double bedroom1_floor_total = 0;
-	static double bedroom1_paint_total = 0;
-	static double bedroom1_floorarea = 0;
-	static double bedroom1_wallarea = 0;
-	
-	static double bedroom2Total = 0;
-	static double bedroom2_floor_total = 0;
-	static double bedroom2_paint_total = 0;
-	static double bedroom2_floorarea = 0;
-	static double bedroom2_wallarea = 0;
-	
-	static double bedroom3Total = 0;
-	static double bedroom3_floor_total = 0;
-	static double bedroom3_paint_total = 0;
-	static double bedroom3_floorarea = 0;
-	static double bedroom3_wallarea = 0;
-	
-	static double kitchenTotal = 0;
-	static double kitchen_floor_total = 0;
-	static double kitchen_paint_total = 0;
-	static double kitchen_floorarea = 0;
-	static double kitchen_wallarea = 0;
-	
-	static double diningroomTotal = 0;
-	static double diningroom_floor_total = 0;
-	static double diningroom_paint_total = 0;
-	static double diningroom_floorarea = 0;
-	static double diningroom_wallarea = 0;
-	
-	static double familyroomTotal = 0;
-	static double familyroom_floor_total = 0;
-	static double familyroom_paint_total = 0;
-	static double familyroom_floorarea = 0;
-	static double familyroom_wallarea = 0;
-	
-	static double livingroomTotal = 0;
-	static double livingroom_floor_total = 0;
-	static double livingroom_paint_total = 0;
-	static double livingroom_floorarea = 0;
-	static double livingroom_wallarea = 0;
-	
-	static double bathroom1Total = 0;
-	static double bathroom1_floor_total = 0;
-	static double bathroom1_paint_total = 0;
-	static double bathroom1_floorarea = 0;
-	static double bathroom1_wallarea = 0;
-	
-	static double bathroom2Total = 0;
-	static double bathroom2_floor_total = 0;
-	static double bathroom2_paint_total = 0;
-	static double bathroom2_floorarea = 0;
-	static double bathroom2_wallarea = 0;
-	
-	static double thsqftTotal = 0;
-	
-	static JTextArea display = new JTextArea(15, 30);
-	static JScrollPane scroll = new JScrollPane(display);
+	static JTextArea display 				= new JTextArea(15, 30);
+	static JScrollPane scroll 				= new JScrollPane(display);
 	
 	static String[] paint_types_list		= new String[] {"Basic..........$19.97", 
 															"Deluxe..........&26.97",
@@ -89,22 +91,12 @@ public class Depot implements ActionListener
 															"Plush..........$8.25"};
 	static JComboBox<String> carpet_styles	= new JComboBox<String>(carpet_styles_list);
 	
-	static JLabel labelSlot1;
-	static JLabel paintslot;
-	static JLabel tileslot;
-	static JLabel carpetslot;
-	static JLabel calculatorslot;
-	static JLabel printerslot;
-	final JLabel pic = new JLabel(HomeReno[14]);
-	
 	//---------------------------------------JTextFields---------------------------------------//
-/**/static JTextField outputTextsub_field			=	new JTextField(15);
-/**/static JTextField outputTexttax_field			=	new JTextField(15);
+/**/static JTextField outputTextsub_field			=	new JTextField(15);				//Sub total
+/**/static JTextField outputTexttax_field			=	new JTextField(15);				//Tax
 /**/static JTextField outputTextGT_field			=	new JTextField(15);				//Grand total
-/**/static JTextField outputTextSC_field			=	new JTextField(15);
+/**/static JTextField outputTextSC_field			=	new JTextField(15);				//Surcharge
 /**/
-/**/static JButton butt                             =   new JButton();
-/**/static JButton butt2                            =   new JButton();
 /**/static JTextField bedroom1_length_field			= 	new JTextField(5);				//Bedroom1 Length Text Field
 /**/static JTextField bedroom1_width_field 			= 	new JTextField(5);				//Bedroom1 Width Text Field
 /**/static JTextField bedroom2_length_field			=	new JTextField(5);				//Bedroom2 Length Text Field
@@ -134,6 +126,14 @@ public class Depot implements ActionListener
 	//---------------------------------------JTextFields---------------------------------------//
 	
 	//---------------------------------------JLabels---------------------------------------//
+/**/static JLabel labelSlot1;
+/**/static JLabel paintslot;
+/**/static JLabel tileslot;
+/**/static JLabel carpetslot;
+/**/static JLabel calculatorslot;
+/**/static JLabel printerslot;
+/**/static JLabel pic;
+/**/
 /**/static JLabel bedroom1							=	new JLabel("Bedroom 1"); 
 /**/static JLabel bedroom1_length 					= 	new JLabel("Length");			//Bedroom1 Length
 /**/static JLabel bedroom1_width 					= 	new JLabel("Width");			//Bedroom1 Width
@@ -183,69 +183,69 @@ public class Depot implements ActionListener
 /**/
 /**/static JLabel calcprice							= 	new JLabel("Calculate Price");
 /**/static JLabel printestimate						=	new JLabel("Print Estimate");
-
-	static JLabel carpetMult_label						=	new JLabel("Carpet: " + Double.toString(carpetMult));
-	static JLabel tilesMult_label							= 	new JLabel("Tile: " + Double.toString(tilesMult));
-	static JLabel paintMult_label							=	new JLabel("Paint: " + Double.toString(paintMult));
-	static JLabel Sub_Total_label							=	new JLabel("Sub Total" + Double.toString(Sub_Total));
-	static JLabel surcharge_label							=	new JLabel("Surcharge: " + Double.toString(surcharge));
-	static JLabel grand_total_label						=	new JLabel("Grand Total: " + Double.toString(grand_total));
-	
-	static JLabel bedroom1Total_label 					= 	new JLabel("Bedroom1 Total: " + Double.toString(bedroom1Total));
-	static JLabel bedroom1_floor_total_label 				=	new JLabel("Bedroom1 Floor Total: " + Double.toString(bedroom1_floor_total));
-	static JLabel bedroom1_paint_total_label 				= 	new JLabel("Bedroom1 Paint Total: " + Double.toString(bedroom1_paint_total));
-	static JLabel bedroom1_floorarea_label 				=	new JLabel("Bedroom1 Floor Area: " + Double.toString(bedroom1_floorarea));
-	static JLabel bedroom1_wallarea_label 				=	new JLabel("Bedroom1 Wall Area: " + Double.toString(bedroom1_wallarea));
-	
-	static JLabel bedroom2Total_label 					=	new JLabel("Bedroom2 Total: " + Double.toString(bedroom2Total));
-	static JLabel bedroom2_floor_total_label 				= 	new JLabel("Bedroom2 Floor Total: " + Double.toString(bedroom2_floor_total));
-	static JLabel bedroom2_paint_total_label 				=	new JLabel("Bedroom2 Paint Total: " + Double.toString(bedroom2_paint_total));
-	static JLabel bedroom2_floorarea_label 				=	new JLabel("Bedroom2 Floor Area: " + Double.toString(bedroom2_floorarea));
-	static JLabel bedroom2_wallarea_label 				= 	new JLabel("Bedroom2 Wall Area: " + Double.toString(bedroom2_wallarea));
-	
-	static JLabel bedroom3Total_label 					=	new JLabel("Bedroom3 Total: " + Double.toString(bedroom3Total));
-	static JLabel bedroom3_floor_total_label 				=	new JLabel("Bedroom3 Floor Total: " + Double.toString(bedroom3_floor_total));
-	static JLabel bedroom3_paint_total_label 				=	new JLabel("Bedroom3 Paint Total: " + Double.toString(bedroom3_paint_total));
-	static JLabel bedroom3_floorarea_label 				= 	new JLabel("Bedroom3 Floor Area: " + Double.toString(bedroom3_floorarea));
-	static JLabel bedroom3_wallarea_label 				=	new JLabel("Bedroom3 Wall Area: " + Double.toString(bedroom3_wallarea));
-	
-	static JLabel kitchenTotal_label 						=	new JLabel("Kitchen Total: " + Double.toString(kitchenTotal));
-	static JLabel kitchen_floor_total_label 				=	new JLabel("Kitchen Floor Total: " + Double.toString(kitchen_floor_total));
-	static JLabel kitchen_paint_total_label 				=	new JLabel("Kitchen Paint Total: " + Double.toString(kitchen_paint_total));
-	static JLabel kitchen_floorarea_label 				=	new JLabel("Kitchen Floor Area: " + Double.toString(kitchen_floorarea));
-	static JLabel kitchen_wallarea_label 					= 	new JLabel("Kitchen Wall Area: " + Double.toString(kitchen_wallarea));
-	
-	static JLabel diningroomTotal_label					=	new JLabel("Diningroom Total: " + Double.toString(diningroomTotal));
-	static JLabel diningroom_floor_total_label 			=	new JLabel("Dinignroom Floor Total: " + Double.toString(diningroom_floor_total));
-	static JLabel diningroom_paint_total_label 			=	new JLabel("Diningroom Paint Total: " + Double.toString(diningroom_paint_total));
-	static JLabel diningroom_floorarea_label 				= 	new JLabel("Diningroom Floor Area: " + Double.toString(diningroom_floorarea));
-	static JLabel diningroom_wallarea_label 				=	new JLabel("Diningroom Wall Area: " + Double.toString(diningroom_wallarea));
-	
-	static JLabel familyroomTotal_label 					=	new JLabel("Familyroom Total: " + Double.toString(familyroomTotal));
-	static JLabel familyroom_floor_total_label 			=	new JLabel("Familyroom Floor Total: " + Double.toString(familyroom_floor_total));
-	static JLabel familyroom_paint_total_label 			=	new JLabel("Familyroom Paint Total: " + Double.toString(familyroom_paint_total));
-	static JLabel familyroom_floorarea_label 				= 	new JLabel("Familyroom Floor Area: " + Double.toString(familyroom_floorarea));
-	static JLabel familyroom_wallarea_label 				= 	new JLabel("Familyroom Wall Area: " + Double.toString(familyroom_wallarea));
-	
-	static JLabel livingroomTotal_label 					=	new JLabel("Livingroom Total: " + Double.toString(livingroomTotal));
-	static JLabel livingroom_floor_total_label 			=	new JLabel("Livingroom Floor Total: " + Double.toString(livingroom_floor_total));
-	static JLabel livingroom_paint_total_label 			=	new JLabel("Livingroom Paint Total: " + Double.toString(livingroom_paint_total));
-	static JLabel livingroom_floorarea_label 				=	new JLabel("Livingroom Floor Area: " + Double.toString(livingroom_floorarea));
-	static JLabel livingroom_wallarea_label 				=	new JLabel("Livingroom Wall Area: " + Double.toString(livingroom_wallarea));
-	
-	static JLabel bathroom1Total_label 					=	new JLabel("Bathroom1 Total: " + Double.toString(bathroom1Total));
-	static JLabel bathroom1_floor_total_label 			=	new JLabel("Bathroom1 Floor Total: " + Double.toString(bathroom1_floor_total));
-	static JLabel bathroom1_paint_total_label 			=	new JLabel("Bathroom1 Paint Total: " + Double.toString(bathroom1_paint_total));
-	static JLabel bathroom1_floorarea_label 				=	new JLabel("Bathroom1 Floor Area: " + Double.toString(bathroom1_floorarea));
-	static JLabel bathroom1_wallarea_label 				=	new JLabel("Bathroom1 Wall Area: " + Double.toString(bathroom1_wallarea));
-	
-	static JLabel bathroom2Total_label 					=	new JLabel("Bathroom2 Total: " + Double.toString(bathroom2Total));
-	static JLabel bathroom2_floor_total_label 			=	new JLabel("Bathroom2 Floor Total: " + Double.toString(bathroom2_floor_total));
-	static JLabel bathroom2_paint_total_label 			=	new JLabel("Bathroom2 Paint Total: " + Double.toString(bathroom2_paint_total));
-	static JLabel bathroom2_floorarea_label 				=	new JLabel("Bathroom2 Floor Area: " + Double.toString(bathroom2_floorarea));
-	static JLabel bathroom2_wallarea_label 				=	new JLabel("Bathroom2 Wall Area: " + Double.toString(bathroom2_wallarea));
-	
-	static JLabel thsqftTotal_label 						=	new JLabel("Total Home Square Footage: " + Double.toString(thsqftTotal));
+/**/
+/**/static JLabel carpetMult_label					=	new JLabel("Carpet: " + Double.toString(carpetMult));
+/**/static JLabel tilesMult_label					= 	new JLabel("Tile: " + Double.toString(tilesMult));
+/**/static JLabel paintMult_label					=	new JLabel("Paint: " + Double.toString(paintMult));
+/**/static JLabel Sub_Total_label					=	new JLabel("Sub Total" + Double.toString(Sub_Total));
+/**/static JLabel surcharge_label					=	new JLabel("Surcharge: " + Double.toString(surcharge));
+/**/static JLabel grand_total_label					=	new JLabel("Grand Total: " + Double.toString(grand_total));
+/**/	
+/**/static JLabel bedroom1Total_label 				= 	new JLabel("Bedroom1 Total: " + Double.toString(bedroom1Total));
+/**/static JLabel bedroom1_floor_total_label 		=	new JLabel("Bedroom1 Floor Total: " + Double.toString(bedroom1_floor_total));
+/**/static JLabel bedroom1_paint_total_label 		= 	new JLabel("Bedroom1 Paint Total: " + Double.toString(bedroom1_paint_total));
+/**/static JLabel bedroom1_floorarea_label 			=	new JLabel("Bedroom1 Floor Area: " + Double.toString(bedroom1_floorarea));
+/**/static JLabel bedroom1_wallarea_label 			=	new JLabel("Bedroom1 Wall Area: " + Double.toString(bedroom1_wallarea));
+/**/
+/**/static JLabel bedroom2Total_label 				=	new JLabel("Bedroom2 Total: " + Double.toString(bedroom2Total));
+/**/static JLabel bedroom2_floor_total_label 		= 	new JLabel("Bedroom2 Floor Total: " + Double.toString(bedroom2_floor_total));
+/**/static JLabel bedroom2_paint_total_label 		=	new JLabel("Bedroom2 Paint Total: " + Double.toString(bedroom2_paint_total));
+/**/static JLabel bedroom2_floorarea_label 			=	new JLabel("Bedroom2 Floor Area: " + Double.toString(bedroom2_floorarea));
+/**/static JLabel bedroom2_wallarea_label 			= 	new JLabel("Bedroom2 Wall Area: " + Double.toString(bedroom2_wallarea));
+/**/	
+/**/static JLabel bedroom3Total_label 				=	new JLabel("Bedroom3 Total: " + Double.toString(bedroom3Total));
+/**/static JLabel bedroom3_floor_total_label 		=	new JLabel("Bedroom3 Floor Total: " + Double.toString(bedroom3_floor_total));
+/**/static JLabel bedroom3_paint_total_label 		=	new JLabel("Bedroom3 Paint Total: " + Double.toString(bedroom3_paint_total));
+/**/static JLabel bedroom3_floorarea_label 			= 	new JLabel("Bedroom3 Floor Area: " + Double.toString(bedroom3_floorarea));
+/**/static JLabel bedroom3_wallarea_label 			=	new JLabel("Bedroom3 Wall Area: " + Double.toString(bedroom3_wallarea));
+/**/
+/**/static JLabel kitchenTotal_label 				=	new JLabel("Kitchen Total: " + Double.toString(kitchenTotal));
+/**/static JLabel kitchen_floor_total_label 		=	new JLabel("Kitchen Floor Total: " + Double.toString(kitchen_floor_total));
+/**/static JLabel kitchen_paint_total_label 		=	new JLabel("Kitchen Paint Total: " + Double.toString(kitchen_paint_total));
+/**/static JLabel kitchen_floorarea_label 			=	new JLabel("Kitchen Floor Area: " + Double.toString(kitchen_floorarea));
+/**/static JLabel kitchen_wallarea_label 			= 	new JLabel("Kitchen Wall Area: " + Double.toString(kitchen_wallarea));
+/**/
+/**/static JLabel diningroomTotal_label				=	new JLabel("Diningroom Total: " + Double.toString(diningroomTotal));
+/**/static JLabel diningroom_floor_total_label 		=	new JLabel("Dinignroom Floor Total: " + Double.toString(diningroom_floor_total));
+/**/static JLabel diningroom_paint_total_label 		=	new JLabel("Diningroom Paint Total: " + Double.toString(diningroom_paint_total));
+/**/static JLabel diningroom_floorarea_label 		= 	new JLabel("Diningroom Floor Area: " + Double.toString(diningroom_floorarea));
+/**/static JLabel diningroom_wallarea_label 			=	new JLabel("Diningroom Wall Area: " + Double.toString(diningroom_wallarea));
+/**/
+/**/static JLabel familyroomTotal_label 			=	new JLabel("Familyroom Total: " + Double.toString(familyroomTotal));
+/**/static JLabel familyroom_floor_total_label 		=	new JLabel("Familyroom Floor Total: " + Double.toString(familyroom_floor_total));
+/**/static JLabel familyroom_paint_total_label 		=	new JLabel("Familyroom Paint Total: " + Double.toString(familyroom_paint_total));
+/**/static JLabel familyroom_floorarea_label 		= 	new JLabel("Familyroom Floor Area: " + Double.toString(familyroom_floorarea));
+/**/static JLabel familyroom_wallarea_label 		= 	new JLabel("Familyroom Wall Area: " + Double.toString(familyroom_wallarea));
+/**/	
+/**/static JLabel livingroomTotal_label 			=	new JLabel("Livingroom Total: " + Double.toString(livingroomTotal));
+/**/static JLabel livingroom_floor_total_label 		=	new JLabel("Livingroom Floor Total: " + Double.toString(livingroom_floor_total));
+/**/static JLabel livingroom_paint_total_label 		=	new JLabel("Livingroom Paint Total: " + Double.toString(livingroom_paint_total));
+/**/static JLabel livingroom_floorarea_label 		=	new JLabel("Livingroom Floor Area: " + Double.toString(livingroom_floorarea));
+/**/static JLabel livingroom_wallarea_label 		=	new JLabel("Livingroom Wall Area: " + Double.toString(livingroom_wallarea));
+/**/
+/**/static JLabel bathroom1Total_label 				=	new JLabel("Bathroom1 Total: " + Double.toString(bathroom1Total));
+/**/static JLabel bathroom1_floor_total_label 		=	new JLabel("Bathroom1 Floor Total: " + Double.toString(bathroom1_floor_total));
+/**/static JLabel bathroom1_paint_total_label 		=	new JLabel("Bathroom1 Paint Total: " + Double.toString(bathroom1_paint_total));
+/**/static JLabel bathroom1_floorarea_label 		=	new JLabel("Bathroom1 Floor Area: " + Double.toString(bathroom1_floorarea));
+/**/static JLabel bathroom1_wallarea_label 			=	new JLabel("Bathroom1 Wall Area: " + Double.toString(bathroom1_wallarea));
+/**/
+/**/static JLabel bathroom2Total_label 				=	new JLabel("Bathroom2 Total: " + Double.toString(bathroom2Total));
+/**/static JLabel bathroom2_floor_total_label 		=	new JLabel("Bathroom2 Floor Total: " + Double.toString(bathroom2_floor_total));
+/**/static JLabel bathroom2_paint_total_label 		=	new JLabel("Bathroom2 Paint Total: " + Double.toString(bathroom2_paint_total));
+/**/static JLabel bathroom2_floorarea_label 		=	new JLabel("Bathroom2 Floor Area: " + Double.toString(bathroom2_floorarea));
+/**/static JLabel bathroom2_wallarea_label 			=	new JLabel("Bathroom2 Wall Area: " + Double.toString(bathroom2_wallarea));
+/**/
+/**/static JLabel thsqftTotal_label 				=	new JLabel("Total Home Square Footage: " + Double.toString(thsqftTotal));
 	//---------------------------------------JLabels---------------------------------------//
 	
 	//---------------------------------------JRadioButtons---------------------------------------//
@@ -276,30 +276,36 @@ public class Depot implements ActionListener
 /**/JRadioButton thsqft_tile 						= 	new JRadioButton("Tile", false);			//Total Square Foot Tile Button
 /**/JRadioButton thsqft_carpet 						= 	new JRadioButton("Carpet", false);			//Total Square Foot Carpet Button
 /**/
-/**/ButtonGroup bedroom1Group = new ButtonGroup();
-/**/boolean bedroom1Tile = false;
-/**/ButtonGroup bedroom2Group = new ButtonGroup();
-/**/boolean bedroom2Tile = false;
-/**/ButtonGroup bedroom3Group = new ButtonGroup();
-/**/boolean bedroom3Tile = false;
-/**/ButtonGroup kitchenGroup = new ButtonGroup();
-/**/boolean kitchenTile = false;
-/**/ButtonGroup diningroomGroup = new ButtonGroup();
-/**/boolean diningroomTile = false;
-/**/ButtonGroup familyroomGroup = new ButtonGroup();
-/**/boolean familyroomTile = false;
-/**/ButtonGroup livingroomGroup = new ButtonGroup();
-/**/boolean livingroomTile = false;
-/**/ButtonGroup bathroom1Group = new ButtonGroup();
-/**/boolean bathroom1Tile = false;
-/**/ButtonGroup bathroom2Group = new ButtonGroup();
-/**/boolean bathroom2Tile = false;
-/**/ButtonGroup thsqftGroup = new ButtonGroup();
-/**/boolean thsqftTile = false;
-/**/
-
 	//---------------------------------------JRadioButtons---------------------------------------//
-		
+
+	//------------------------------------------JButtons-----------------------------------------//
+/**/static JButton butt                             =   new JButton();		//Calculator Button
+/**/static JButton butt2                            =   new JButton();		//Printer Button
+	//------------------------------------------JButtons-----------------------------------------//
+	
+	//---------------------------------------Button Groups---------------------------------------//
+/**/ButtonGroup bedroom1Group 						= 	new ButtonGroup();
+/**/boolean bedroom1Tile 							= 	false;
+/**/ButtonGroup bedroom2Group 						= 	new ButtonGroup();
+/**/boolean bedroom2Tile 							= 	false;
+/**/ButtonGroup bedroom3Group 						= 	new ButtonGroup();
+/**/boolean bedroom3Tile 							= 	false;
+/**/ButtonGroup kitchenGroup 						= 	new ButtonGroup();
+/**/boolean kitchenTile 							= 	false;
+/**/ButtonGroup diningroomGroup 					= 	new ButtonGroup();
+/**/boolean diningroomTile 							= 	false;
+/**/ButtonGroup familyroomGroup 					= 	new ButtonGroup();
+/**/boolean familyroomTile 							= 	false;
+/**/ButtonGroup livingroomGroup 					= 	new ButtonGroup();
+/**/boolean livingroomTile 							= 	false;
+/**/ButtonGroup bathroom1Group 						= 	new ButtonGroup();
+/**/boolean bathroom1Tile 							= 	false;
+/**/ButtonGroup bathroom2Group 						= 	new ButtonGroup();
+/**/boolean bathroom2Tile 							= 	false;
+/**/ButtonGroup thsqftGroup 						= 	new ButtonGroup();
+/**/boolean thsqftTile 								= 	false;
+	//---------------------------------------Button Groups---------------------------------------//
+
 	//----------------------------------Image Names----------------------------------//
 	public static   String carpetnames[]=
 	{
@@ -506,7 +512,7 @@ public class Depot implements ActionListener
 		outputTexttax_field.setText("" + tax);
 		outputTextGT_field.setText("" + grand_total);
 		outputTextSC_field.setText("" + surcharge);	
-	}
+	}	//End actionPreformed(ActionEvent e)
 	
 	@SuppressWarnings({ "deprecation", "serial" })
 	public Depot() //Begin constructor
@@ -716,8 +722,19 @@ public class Depot implements ActionListener
 					//------------------------------Column 2 Labels------------------------------//
 					
 					//------------------------------Column 3 Labels------------------------------//
-					sc.setLocation(200, 100);
-					surcharge_label.setLocation(400, 150);
+					bathroom2.setLocation(200, 100);
+					bathroom2Total_label.setLocation(200, 150);
+					bathroom2_floor_total_label.setLocation(200, 170);
+					bathroom2_paint_total_label.setLocation(200, 190);
+					bathroom2_floorarea_label.setLocation(200, 210);
+					bathroom2_wallarea_label.setLocation(200, 230);
+					
+					sc.setLocation(400, 280);
+					surcharge_label.setLocation(400, 330);
+					
+					paintMult_label.setLocation(400, 380);
+					tilesMult_label.setLocation(400, 480);
+					carpetMult_label.setLocation(400, 580);
 					//------------------------------Column 3 Labels------------------------------//
 					
 					super.paint(g);
@@ -733,6 +750,7 @@ public class Depot implements ActionListener
 			carpetslot			= new JLabel(HomeReno[0]);
 			calculatorslot		= new JLabel(HomeReno[13]);
 			printerslot			= new JLabel(HomeReno[15]);
+			pic 				= new JLabel(HomeReno[14]);
 			
 			panel.setOpaque(false);
 			display.setEditable(false);
@@ -749,9 +767,9 @@ public class Depot implements ActionListener
 					new ActionListener(){
 						public void actionPerformed(ActionEvent e)
 						{	
-							carpetMult_label.setText("Carpet: " + Double.toString(carpetMult));
-							tilesMult_label.setText("Tile: " + Double.toString(tilesMult));
-							paintMult_label.setText("Paint: " + Double.toString(paintMult));
+							carpetMult_label.setText("Carpet Cost: " + Double.toString(carpetMult));
+							tilesMult_label.setText("Tile Cost: " + Double.toString(tilesMult));
+							paintMult_label.setText("Paint Cost: " + Double.toString(paintMult));
 							Sub_Total_label.setText("Sub Total: " + Double.toString(Sub_Total));
 							surcharge_label.setText("Surcharge: " + Double.toString(surcharge));
 							grand_total_label.setText("Grand Total: " + Double.toString(grand_total));
@@ -806,8 +824,10 @@ public class Depot implements ActionListener
 							PrintEstimate_Window.setSize(600, 700);
 							PrintEstimate_Window.show();
 							PrintEstimate_Window.setVisible(true);
-						}
-					});
+						}//End ActionPerformed(ActionEvent e)
+					}//End new ActionListener
+					);//End .addActionListener()
+			
 			panel2.add(pic);
 			panel2.add(carpetMult_label);
 			panel2.add(tilesMult_label);
