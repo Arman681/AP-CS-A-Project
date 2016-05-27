@@ -177,7 +177,7 @@ public class Depot implements ActionListener
 /**/static JLabel cs 								= 	new JLabel("Carpet Style");
 /**/
 /**/static JLabel sub 								= 	new JLabel("Subtotal");			//Sub-total
-/**/static JLabel tax_label 								= 	new JLabel("Tax");				//Tax
+/**/static JLabel tax_label 						= 	new JLabel("Tax");				//Tax
 /**/static JLabel gt 								= 	new JLabel("Grand Total");		//Grant Total
 /**/static JLabel sc 								= 	new JLabel("Surcharge");		//Surcharge
 /**/
@@ -829,13 +829,13 @@ public class Depot implements ActionListener
 					);//End .addActionListener()
 			
 			panel2.add(pic);
+			
 			panel2.add(carpetMult_label);
 			panel2.add(tilesMult_label);
 			panel2.add(paintMult_label);
-			panel2.add(Sub_Total_label);
 			panel2.add(sc);
 			panel2.add(surcharge_label);
-			panel2.add(grand_total_label);
+			
 			panel2.add(bedroom1);
 			panel2.add(bedroom1Total_label);
 			panel2.add(bedroom1_floor_total_label);
@@ -854,30 +854,35 @@ public class Depot implements ActionListener
 			panel2.add(bedroom3_paint_total_label);
 			panel2.add(bedroom3_floorarea_label);
 			panel2.add(bedroom3_wallarea_label);
+			
 			panel2.add(kitchen);
 			panel2.add(kitchenTotal_label);
 			panel2.add(kitchen_floor_total_label);
 			panel2.add(kitchen_paint_total_label);
 			panel2.add(kitchen_floorarea_label);
 			panel2.add(kitchen_wallarea_label);
+			
 			panel2.add(diningroom);
 			panel2.add(diningroomTotal_label);
 			panel2.add(diningroom_floor_total_label);
 			panel2.add(diningroom_paint_total_label);
 			panel2.add(diningroom_floorarea_label);
 			panel2.add(diningroom_wallarea_label);
+			
 			panel2.add(familyroom);
 			panel2.add(familyroomTotal_label);
 			panel2.add(familyroom_floor_total_label);
 			panel2.add(familyroom_paint_total_label);
 			panel2.add(familyroom_floorarea_label);
 			panel2.add(familyroom_wallarea_label);
+			
 			panel2.add(livingroom);
 			panel2.add(livingroomTotal_label);
 			panel2.add(livingroom_floor_total_label);
 			panel2.add(livingroom_paint_total_label);
 			panel2.add(livingroom_floorarea_label);
 			panel2.add(livingroom_wallarea_label);
+			
 			panel2.add(bathroom1);
 			panel2.add(bathroom1Total_label);
 			panel2.add(bathroom1_floor_total_label);
@@ -890,7 +895,13 @@ public class Depot implements ActionListener
 			panel2.add(bathroom2_paint_total_label);
 			panel2.add(bathroom2_floorarea_label);
 			panel2.add(bathroom2_wallarea_label);
-			panel2.add(thsqft);
+			
+			panel2.add(sub);							//Sub-Total JLabel
+			panel2.add(outputTextsub_field);			//Sub-Total JTextField
+			panel2.add(tax_label);						//Tax JLabel
+			panel2.add(outputTexttax_field);			//Tax JTextField
+			panel2.add(gt);								//Grand Total JLabel
+			panel2.add(outputTextGT_field);				//Grand Total JTextField
 			
 			
 			bedroom1Group.add(bedroom1_tile);
@@ -964,7 +975,7 @@ public class Depot implements ActionListener
 		
 			panel.add(sub);													//"Sub Total"
 			panel.add(outputTextsub_field);									//"Sub Total" JTextField
-			panel.add(tax_label);													//"Tax"
+			panel.add(tax_label);											//"Tax"
 			panel.add(outputTexttax_field);									//"Tax" JTextField
 			panel.add(gt);													//"Grand Total"
 			panel.add(outputTextGT_field);									//"Grand Total" JTextField
