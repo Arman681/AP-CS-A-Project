@@ -8,9 +8,11 @@ public class Depot implements ActionListener
 { 
 	//--------------------------------Instance Variables for ActionPreformed(ActionEvent e)--------------------------------//
 /**/String str								= "";
+/**/
 /**/static double carpetMult 				= 0;
 /**/static double tilesMult 				= 0;
 /**/static double paintMult 				= 0;
+/**/
 /**/static double Sub_Total 				= 0;
 /**/static double tax 						= 0;
 /**/static double surcharge 				= 0;
@@ -123,6 +125,10 @@ public class Depot implements ActionListener
 /**/
 /**/static JTextField thsqft_field					= 	new JTextField(25);
 /**/static JTextField nlh_field						= 	new JTextField(25);
+/**/
+/**/static JTextField subtotal_field				=	new JTextField(15);
+/**/static JTextField grandtotal_field				=	new JTextField(15);
+/**/static JTextField tax_field						=	new JTextField(15);
 	//---------------------------------------JTextFields---------------------------------------//
 	
 	//---------------------------------------JLabels---------------------------------------//
@@ -134,7 +140,7 @@ public class Depot implements ActionListener
 /**/static JLabel printerslot;
 /**/static JLabel pic;
 /**/
-/**/static JLabel bedroom1							=	new JLabel("Bedroom 1"); 
+/**/static JLabel bedroom1							=	new JLabel("Bedroom 1"); //static JLabel br1 = new JLabel("Br1");
 /**/static JLabel bedroom1_length 					= 	new JLabel("Length");			//Bedroom1 Length
 /**/static JLabel bedroom1_width 					= 	new JLabel("Width");			//Bedroom1 Width
 /**/
@@ -177,75 +183,88 @@ public class Depot implements ActionListener
 /**/static JLabel cs 								= 	new JLabel("Carpet Style");
 /**/
 /**/static JLabel sub 								= 	new JLabel("Subtotal");			//Sub-total
-/**/static JLabel tax_label 						= 	new JLabel("Tax");				//Tax
+/**/static JLabel tax_		 						= 	new JLabel("Tax");				//Tax
 /**/static JLabel gt 								= 	new JLabel("Grand Total");		//Grant Total
 /**/static JLabel sc 								= 	new JLabel("Surcharge");		//Surcharge
 /**/
 /**/static JLabel calcprice							= 	new JLabel("Calculate Price");
 /**/static JLabel printestimate						=	new JLabel("Print Estimate");
 /**/
-/**/static JLabel carpetMult_label					=	new JLabel("Carpet: " + Double.toString(carpetMult));
-/**/static JLabel tilesMult_label					= 	new JLabel("Tile: " + Double.toString(tilesMult));
-/**/static JLabel paintMult_label					=	new JLabel("Paint: " + Double.toString(paintMult));
-/**/static JLabel Sub_Total_label					=	new JLabel("Sub Total" + Double.toString(Sub_Total));
-/**/static JLabel surcharge_label					=	new JLabel("Surcharge: " + Double.toString(surcharge));
-/**/static JLabel grand_total_label					=	new JLabel("Grand Total: " + Double.toString(grand_total));
-/**/	
+/**/static JLabel carpetMult_label					=	new JLabel("Carpet Cost");
+/**/static JLabel carpetMult_cost					=	new JLabel();
+/**/static JLabel tilesMult_label					= 	new JLabel("Tile Cost");
+/**/static JLabel tilesMult_cost					=	new JLabel();
+/**/static JLabel paintMult_label					=	new JLabel("Paint Cost");
+/**/static JLabel paintMult_cost					=	new JLabel();
+/**/static JLabel surcharge_label					=	new JLabel("Surcharge");
+/**/static JLabel surcharge_cost					=	new JLabel();
+/**/static JLabel grandtotal_label					=	new JLabel("Grand Total");
+/**/static JLabel subtotal_label					=	new JLabel("Sub Total");
+/**/static JLabel tax_label							=	new JLabel("Tax");
+/**/
+/**/static JLabel bedroom1_label					= 	new JLabel("Bedroom 1");
 /**/static JLabel bedroom1Total_label 				= 	new JLabel("Bedroom1 Total: " + Double.toString(bedroom1Total));
 /**/static JLabel bedroom1_floor_total_label 		=	new JLabel("Bedroom1 Floor Total: " + Double.toString(bedroom1_floor_total));
 /**/static JLabel bedroom1_paint_total_label 		= 	new JLabel("Bedroom1 Paint Total: " + Double.toString(bedroom1_paint_total));
 /**/static JLabel bedroom1_floorarea_label 			=	new JLabel("Bedroom1 Floor Area: " + Double.toString(bedroom1_floorarea));
 /**/static JLabel bedroom1_wallarea_label 			=	new JLabel("Bedroom1 Wall Area: " + Double.toString(bedroom1_wallarea));
 /**/
+/**/static JLabel bedroom2_label					=	new JLabel("Bedroom 2");
 /**/static JLabel bedroom2Total_label 				=	new JLabel("Bedroom2 Total: " + Double.toString(bedroom2Total));
 /**/static JLabel bedroom2_floor_total_label 		= 	new JLabel("Bedroom2 Floor Total: " + Double.toString(bedroom2_floor_total));
 /**/static JLabel bedroom2_paint_total_label 		=	new JLabel("Bedroom2 Paint Total: " + Double.toString(bedroom2_paint_total));
 /**/static JLabel bedroom2_floorarea_label 			=	new JLabel("Bedroom2 Floor Area: " + Double.toString(bedroom2_floorarea));
 /**/static JLabel bedroom2_wallarea_label 			= 	new JLabel("Bedroom2 Wall Area: " + Double.toString(bedroom2_wallarea));
-/**/	
+/**/
+/**/static JLabel bedroom3_label					= 	new JLabel("Bedroom 3");
 /**/static JLabel bedroom3Total_label 				=	new JLabel("Bedroom3 Total: " + Double.toString(bedroom3Total));
 /**/static JLabel bedroom3_floor_total_label 		=	new JLabel("Bedroom3 Floor Total: " + Double.toString(bedroom3_floor_total));
 /**/static JLabel bedroom3_paint_total_label 		=	new JLabel("Bedroom3 Paint Total: " + Double.toString(bedroom3_paint_total));
 /**/static JLabel bedroom3_floorarea_label 			= 	new JLabel("Bedroom3 Floor Area: " + Double.toString(bedroom3_floorarea));
 /**/static JLabel bedroom3_wallarea_label 			=	new JLabel("Bedroom3 Wall Area: " + Double.toString(bedroom3_wallarea));
 /**/
+/**/static JLabel kitchen_label						=	new JLabel("Kitchen");
 /**/static JLabel kitchenTotal_label 				=	new JLabel("Kitchen Total: " + Double.toString(kitchenTotal));
 /**/static JLabel kitchen_floor_total_label 		=	new JLabel("Kitchen Floor Total: " + Double.toString(kitchen_floor_total));
 /**/static JLabel kitchen_paint_total_label 		=	new JLabel("Kitchen Paint Total: " + Double.toString(kitchen_paint_total));
 /**/static JLabel kitchen_floorarea_label 			=	new JLabel("Kitchen Floor Area: " + Double.toString(kitchen_floorarea));
 /**/static JLabel kitchen_wallarea_label 			= 	new JLabel("Kitchen Wall Area: " + Double.toString(kitchen_wallarea));
 /**/
+/**/static JLabel diningroom_label					=	new JLabel("Dining Room");
 /**/static JLabel diningroomTotal_label				=	new JLabel("Diningroom Total: " + Double.toString(diningroomTotal));
 /**/static JLabel diningroom_floor_total_label 		=	new JLabel("Dinignroom Floor Total: " + Double.toString(diningroom_floor_total));
 /**/static JLabel diningroom_paint_total_label 		=	new JLabel("Diningroom Paint Total: " + Double.toString(diningroom_paint_total));
 /**/static JLabel diningroom_floorarea_label 		= 	new JLabel("Diningroom Floor Area: " + Double.toString(diningroom_floorarea));
-/**/static JLabel diningroom_wallarea_label 			=	new JLabel("Diningroom Wall Area: " + Double.toString(diningroom_wallarea));
+/**/static JLabel diningroom_wallarea_label 		=	new JLabel("Diningroom Wall Area: " + Double.toString(diningroom_wallarea));
 /**/
+/**/static JLabel familyroom_label					=	new JLabel("Family Room");
 /**/static JLabel familyroomTotal_label 			=	new JLabel("Familyroom Total: " + Double.toString(familyroomTotal));
 /**/static JLabel familyroom_floor_total_label 		=	new JLabel("Familyroom Floor Total: " + Double.toString(familyroom_floor_total));
 /**/static JLabel familyroom_paint_total_label 		=	new JLabel("Familyroom Paint Total: " + Double.toString(familyroom_paint_total));
 /**/static JLabel familyroom_floorarea_label 		= 	new JLabel("Familyroom Floor Area: " + Double.toString(familyroom_floorarea));
 /**/static JLabel familyroom_wallarea_label 		= 	new JLabel("Familyroom Wall Area: " + Double.toString(familyroom_wallarea));
-/**/	
+/**/
+/**/static JLabel livingroom_label					=	new JLabel("Living Room");
 /**/static JLabel livingroomTotal_label 			=	new JLabel("Livingroom Total: " + Double.toString(livingroomTotal));
 /**/static JLabel livingroom_floor_total_label 		=	new JLabel("Livingroom Floor Total: " + Double.toString(livingroom_floor_total));
 /**/static JLabel livingroom_paint_total_label 		=	new JLabel("Livingroom Paint Total: " + Double.toString(livingroom_paint_total));
 /**/static JLabel livingroom_floorarea_label 		=	new JLabel("Livingroom Floor Area: " + Double.toString(livingroom_floorarea));
 /**/static JLabel livingroom_wallarea_label 		=	new JLabel("Livingroom Wall Area: " + Double.toString(livingroom_wallarea));
 /**/
+/**/static JLabel bathroom1_label					=	new JLabel("Bathroom 1");
 /**/static JLabel bathroom1Total_label 				=	new JLabel("Bathroom1 Total: " + Double.toString(bathroom1Total));
 /**/static JLabel bathroom1_floor_total_label 		=	new JLabel("Bathroom1 Floor Total: " + Double.toString(bathroom1_floor_total));
 /**/static JLabel bathroom1_paint_total_label 		=	new JLabel("Bathroom1 Paint Total: " + Double.toString(bathroom1_paint_total));
 /**/static JLabel bathroom1_floorarea_label 		=	new JLabel("Bathroom1 Floor Area: " + Double.toString(bathroom1_floorarea));
 /**/static JLabel bathroom1_wallarea_label 			=	new JLabel("Bathroom1 Wall Area: " + Double.toString(bathroom1_wallarea));
 /**/
+/**/static JLabel bathroom2_label					= 	new JLabel("Bathroom 2");
 /**/static JLabel bathroom2Total_label 				=	new JLabel("Bathroom2 Total: " + Double.toString(bathroom2Total));
 /**/static JLabel bathroom2_floor_total_label 		=	new JLabel("Bathroom2 Floor Total: " + Double.toString(bathroom2_floor_total));
 /**/static JLabel bathroom2_paint_total_label 		=	new JLabel("Bathroom2 Paint Total: " + Double.toString(bathroom2_paint_total));
 /**/static JLabel bathroom2_floorarea_label 		=	new JLabel("Bathroom2 Floor Area: " + Double.toString(bathroom2_floorarea));
 /**/static JLabel bathroom2_wallarea_label 			=	new JLabel("Bathroom2 Wall Area: " + Double.toString(bathroom2_wallarea));
 /**/
-/**/static JLabel thsqftTotal_label 				=	new JLabel("Total Home Square Footage: " + Double.toString(thsqftTotal));
 	//---------------------------------------JLabels---------------------------------------//
 	
 	//---------------------------------------JRadioButtons---------------------------------------//
@@ -561,12 +580,16 @@ public class Depot implements ActionListener
 									
 					sub.setLocation(66, 600);
 					outputTextsub_field.setLocation(6, 620);
-					tax_label.setLocation(310, 600);
+					outputTextsub_field.setEditable(false);
+					tax_.setLocation(310, 600);
 					outputTexttax_field.setLocation(240, 620);
+					outputTexttax_field.setEditable(false);
 					gt.setLocation(550, 600);
 					outputTextGT_field.setLocation(500, 620);
+					outputTextGT_field.setEditable(false);
 					sc.setLocation(800, 600);
 					outputTextSC_field.setLocation(750, 620);
+					outputTextSC_field.setEditable(false);
 				
 					//------------------------------Column 1 Rooms------------------------------//
 					bedroom1.setLocation(10, 110);
@@ -662,80 +685,96 @@ public class Depot implements ActionListener
 					pic.setLocation(0, 0);
 					
 					//------------------------------Column 1 Labels------------------------------//
-					bedroom1.setLocation(0,100);
-					bedroom1Total_label.setLocation(0, 150);
-					bedroom1_floor_total_label.setLocation(0, 170);
-					bedroom1_paint_total_label.setLocation(0, 190);
-					bedroom1_floorarea_label.setLocation(0, 210);
-					bedroom1_wallarea_label.setLocation(0, 230);
+					bedroom1_label.setLocation(28,120);
+					bedroom1Total_label.setLocation(20, 145);
+					bedroom1_floor_total_label.setLocation(20, 165);
+					bedroom1_paint_total_label.setLocation(20, 185);
+					bedroom1_floorarea_label.setLocation(20, 205);
+					bedroom1_wallarea_label.setLocation(20, 225);
 					
-					bedroom2.setLocation(0, 280);
-					bedroom2Total_label.setLocation(0, 330);
-					bedroom2_floor_total_label.setLocation(0, 350);
-					bedroom2_paint_total_label.setLocation(0, 370);
-					bedroom2_floorarea_label.setLocation(0, 390);
-					bedroom2_wallarea_label.setLocation(0, 410);
+					bedroom2_label.setLocation(28, 275);
+					bedroom2Total_label.setLocation(20, 300);
+					bedroom2_floor_total_label.setLocation(20, 320);
+					bedroom2_paint_total_label.setLocation(20, 340);
+					bedroom2_floorarea_label.setLocation(20, 360);
+					bedroom2_wallarea_label.setLocation(20, 380);
 					
-					bedroom3.setLocation(0, 460);
-					bedroom3Total_label.setLocation(0, 510);
-					bedroom3_floor_total_label.setLocation(0, 530);
-					bedroom3_paint_total_label.setLocation(0, 550);
-					bedroom3_floorarea_label.setLocation(0, 570);
-					bedroom3_wallarea_label.setLocation(0, 590);
+					bedroom3_label.setLocation(28, 430);
+					bedroom3Total_label.setLocation(20, 455);
+					bedroom3_floor_total_label.setLocation(20, 475);
+					bedroom3_paint_total_label.setLocation(20, 495);
+					bedroom3_floorarea_label.setLocation(20, 515);
+					bedroom3_wallarea_label.setLocation(20, 535);
 					
-					kitchen.setLocation(0, 640);
-					kitchenTotal_label.setLocation(0, 690);
-					kitchen_floor_total_label.setLocation(0, 710);
-					kitchen_paint_total_label.setLocation(0, 730);
-					kitchen_floorarea_label.setLocation(0, 750);
-					kitchen_wallarea_label.setLocation(0, 770);
 					//------------------------------Column 1 Labels------------------------------//
 					
 					//------------------------------Column 2 Labels------------------------------//
-					diningroom.setLocation(100, 100);
-					diningroomTotal_label.setLocation(100, 150);
-					diningroom_floor_total_label.setLocation(100, 170);
-					diningroom_paint_total_label.setLocation(100, 190);
-					diningroom_floorarea_label.setLocation(100, 210);
-					diningroom_wallarea_label.setLocation(100, 230);
+					kitchen_label.setLocation(135, 120);
+					kitchenTotal_label.setLocation(120, 145);
+					kitchen_floor_total_label.setLocation(120, 165);
+					kitchen_paint_total_label.setLocation(120, 185);
+					kitchen_floorarea_label.setLocation(120, 205);
+					kitchen_wallarea_label.setLocation(120, 225);
 					
-					familyroom.setLocation(100, 280);
-					familyroomTotal_label.setLocation(100, 330);
-					familyroom_floor_total_label.setLocation(100, 350);
-					familyroom_paint_total_label.setLocation(100, 370);
-					familyroom_floorarea_label.setLocation(100, 390);
-					familyroom_wallarea_label.setLocation(100, 410);
+					diningroom_label.setLocation(125, 275);
+					diningroomTotal_label.setLocation(120, 300);
+					diningroom_floor_total_label.setLocation(120, 320);
+					diningroom_paint_total_label.setLocation(120, 340);
+					diningroom_floorarea_label.setLocation(120, 360);
+					diningroom_wallarea_label.setLocation(120, 380);
 					
-					livingroom.setLocation(100, 460);
-					livingroomTotal_label.setLocation(100, 510);
-					livingroom_floor_total_label.setLocation(100, 530);
-					livingroom_paint_total_label.setLocation(100, 550);
-					livingroom_floorarea_label.setLocation(100, 570);
-					livingroom_wallarea_label.setLocation(100, 590);
+					familyroom_label.setLocation(125, 430);
+					familyroomTotal_label.setLocation(120, 455);
+					familyroom_floor_total_label.setLocation(120, 475);
+					familyroom_paint_total_label.setLocation(120, 495);
+					familyroom_floorarea_label.setLocation(120, 515);
+					familyroom_wallarea_label.setLocation(120, 535);
 					
-					bathroom1.setLocation(100, 640);
-					bathroom1Total_label.setLocation(100, 690);
-					bathroom1_floor_total_label.setLocation(100, 710);
-					bathroom1_paint_total_label.setLocation(100, 730);
-					bathroom1_floorarea_label.setLocation(100, 750);
-					bathroom1_wallarea_label.setLocation(100, 770);
 					//------------------------------Column 2 Labels------------------------------//
 					
 					//------------------------------Column 3 Labels------------------------------//
-					bathroom2.setLocation(200, 100);
-					bathroom2Total_label.setLocation(200, 150);
-					bathroom2_floor_total_label.setLocation(200, 170);
-					bathroom2_paint_total_label.setLocation(200, 190);
-					bathroom2_floorarea_label.setLocation(200, 210);
-					bathroom2_wallarea_label.setLocation(200, 230);
+					livingroom_label.setLocation(225, 120);
+					livingroomTotal_label.setLocation(220, 145);
+					livingroom_floor_total_label.setLocation(220, 165);
+					livingroom_paint_total_label.setLocation(220, 185);
+					livingroom_floorarea_label.setLocation(220, 205);
+					livingroom_wallarea_label.setLocation(220, 225);
 					
-					sc.setLocation(400, 280);
-					surcharge_label.setLocation(400, 330);
+					bathroom1_label.setLocation(225, 275);
+					bathroom1Total_label.setLocation(220, 300);
+					bathroom1_floor_total_label.setLocation(220, 320);
+					bathroom1_paint_total_label.setLocation(220, 340);
+					bathroom1_floorarea_label.setLocation(220, 360);
+					bathroom1_wallarea_label.setLocation(220, 380);
 					
-					paintMult_label.setLocation(400, 380);
-					tilesMult_label.setLocation(400, 480);
-					carpetMult_label.setLocation(400, 580);
+					bathroom2_label.setLocation(225, 430);
+					bathroom2Total_label.setLocation(220, 455);
+					bathroom2_floor_total_label.setLocation(220, 475);
+					bathroom2_paint_total_label.setLocation(220, 495);
+					bathroom2_floorarea_label.setLocation(220, 515);
+					bathroom2_wallarea_label.setLocation(220, 535);
 					//------------------------------Column 3 Labels------------------------------//
+					
+					//------------------------------Column 4 Labels------------------------------//
+					surcharge_label.setLocation(400, 230);
+					surcharge_cost.setLocation(390, 250);
+					
+					paintMult_label.setLocation(400, 330);
+					paintMult_cost.setLocation(390, 350);
+					
+					tilesMult_label.setLocation(400, 430);
+					tilesMult_cost.setLocation(390, 450);
+					
+					carpetMult_label.setLocation(400, 530);
+					carpetMult_cost.setLocation(390, 550);
+					//------------------------------Column 4 Labels------------------------------//
+					
+					subtotal_label.setLocation(350, 600);
+					subtotal_field.setLocation(410, 600);
+					grandtotal_label.setLocation(338, 620);
+					grandtotal_field.setLocation(410, 620);
+					tax_label.setLocation(380, 640);
+					tax_field.setLocation(410, 640);
 					
 					super.paint(g);
 				} //Close public void paint(Graphics g)	
@@ -767,12 +806,12 @@ public class Depot implements ActionListener
 					new ActionListener(){
 						public void actionPerformed(ActionEvent e)
 						{	
-							carpetMult_label.setText("Carpet Cost: " + Double.toString(carpetMult));
-							tilesMult_label.setText("Tile Cost: " + Double.toString(tilesMult));
-							paintMult_label.setText("Paint Cost: " + Double.toString(paintMult));
-							Sub_Total_label.setText("Sub Total: " + Double.toString(Sub_Total));
-							surcharge_label.setText("Surcharge: " + Double.toString(surcharge));
-							grand_total_label.setText("Grand Total: " + Double.toString(grand_total));
+							carpetMult_cost.setText("Total Cost: " + Double.toString(carpetMult));
+							tilesMult_cost.setText("Total Cost: " + Double.toString(tilesMult));
+							paintMult_cost.setText("Total Cost: " + Double.toString(paintMult));
+							
+							surcharge_cost.setText("Total Cost: " + Double.toString(surcharge));
+							
 							bedroom1Total_label.setText("Total Cost: " + Double.toString(bedroom1Total));
 							bedroom1_floor_total_label.setText("Floor Cost: " + Double.toString(bedroom1_floor_total));
 							bedroom1_paint_total_label.setText("Paint Cost: " + Double.toString(bedroom1_paint_total));
@@ -788,26 +827,31 @@ public class Depot implements ActionListener
 							bedroom3_paint_total_label.setText("Paint Cost: " + Double.toString(bedroom3_paint_total));
 							bedroom3_floorarea_label.setText("Floor Area: " + Double.toString(bedroom3_floorarea));
 							bedroom3_wallarea_label.setText("Wall Area: " + Double.toString(bedroom3_wallarea));
+							
 							kitchenTotal_label.setText("Total Cost: " + Double.toString(kitchenTotal));
 							kitchen_floor_total_label.setText("Floor Cost: " + Double.toString(kitchen_floor_total));
 							kitchen_paint_total_label.setText("Paint Cost: " + Double.toString(kitchen_paint_total));
 							kitchen_floorarea_label.setText("Floor Area: " + Double.toString(kitchen_floorarea));
 							kitchen_wallarea_label.setText("Wall Area: " + Double.toString(kitchen_wallarea));
+							
 							diningroomTotal_label.setText("Total Cost: " + Double.toString(diningroomTotal));
 							diningroom_floor_total_label.setText("Floor Cost: " + Double.toString(diningroom_floor_total));
 							diningroom_paint_total_label.setText("Paint Cost: " + Double.toString(diningroom_paint_total));
 							diningroom_floorarea_label.setText("Floor Area: " + Double.toString(diningroom_floorarea));
 							diningroom_wallarea_label.setText("Wall Area: " + Double.toString(diningroom_wallarea));
+							
 							familyroomTotal_label.setText("Total Cost: " + Double.toString(familyroomTotal));
 							familyroom_floor_total_label.setText("Floor Cost: " + Double.toString(familyroom_floor_total));
 							familyroom_paint_total_label.setText("Paint Cost: " + Double.toString(familyroom_paint_total));
 							familyroom_floorarea_label.setText("Floor Area: " + Double.toString(familyroom_floorarea));
 							familyroom_wallarea_label.setText("Wall Area: " + Double.toString(familyroom_wallarea));
+							
 							livingroomTotal_label.setText("Total Cost: " + Double.toString(livingroomTotal));
 							livingroom_floor_total_label.setText("Floor Cost: " + Double.toString(livingroom_floor_total));
 							livingroom_paint_total_label.setText("Paint Cost: " + Double.toString(livingroom_paint_total));
 							livingroom_floorarea_label.setText("Floor Area: " + Double.toString(livingroom_floorarea));
 							livingroom_wallarea_label.setText("Wall Area: " + Double.toString(livingroom_wallarea));
+							
 							bathroom1Total_label.setText("Total Cost: " + Double.toString(bathroom1Total));
 							bathroom1_floor_total_label.setText("Floor Cost: " + Double.toString(bathroom1_floor_total));
 							bathroom1_paint_total_label.setText("Paint Cost: " + Double.toString(bathroom1_paint_total));
@@ -818,7 +862,15 @@ public class Depot implements ActionListener
 							bathroom2_paint_total_label.setText("Paint Cost: " + Double.toString(bathroom2_paint_total));
 							bathroom2_floorarea_label.setText("Floor Area: " + Double.toString(bathroom2_floorarea));
 							bathroom2_wallarea_label.setText("Wall Area: " + Double.toString(bathroom2_wallarea));
-							thsqftTotal_label.setText("Total Home Square Footage: " + Double.toString(thsqftTotal));
+							
+							subtotal_field.setText(Double.toString(Sub_Total));
+							subtotal_field.setEditable(false);
+							
+							grandtotal_field.setText(Double.toString(grand_total));
+							grandtotal_field.setEditable(false);
+							
+							tax_field.setText(Double.toString(tax));
+							tax_field.setEditable(false);
 							
 							PrintEstimate_Window.getContentPane().add(panel2); //PrintEstimate_Window (JFrame)
 							PrintEstimate_Window.setSize(600, 700);
@@ -831,77 +883,80 @@ public class Depot implements ActionListener
 			panel2.add(pic);
 			
 			panel2.add(carpetMult_label);
+			panel2.add(carpetMult_cost);
 			panel2.add(tilesMult_label);
+			panel2.add(tilesMult_cost);
 			panel2.add(paintMult_label);
-			panel2.add(sc);
+			panel2.add(paintMult_cost);
 			panel2.add(surcharge_label);
+			panel2.add(surcharge_cost);
 			
-			panel2.add(bedroom1);
+			panel2.add(bedroom1_label);
 			panel2.add(bedroom1Total_label);
 			panel2.add(bedroom1_floor_total_label);
 			panel2.add(bedroom1_paint_total_label);
 			panel2.add(bedroom1_floorarea_label);
 			panel2.add(bedroom1_wallarea_label);
-			panel2.add(bedroom2);
+			panel2.add(bedroom2_label);
 			panel2.add(bedroom2Total_label);
 			panel2.add(bedroom2_floor_total_label);
 			panel2.add(bedroom2_paint_total_label);
 			panel2.add(bedroom2_floorarea_label);
 			panel2.add(bedroom2_wallarea_label);
-			panel2.add(bedroom3);
+			panel2.add(bedroom3_label);
 			panel2.add(bedroom3Total_label);
 			panel2.add(bedroom3_floor_total_label);
 			panel2.add(bedroom3_paint_total_label);
 			panel2.add(bedroom3_floorarea_label);
 			panel2.add(bedroom3_wallarea_label);
 			
-			panel2.add(kitchen);
+			panel2.add(kitchen_label);
 			panel2.add(kitchenTotal_label);
 			panel2.add(kitchen_floor_total_label);
 			panel2.add(kitchen_paint_total_label);
 			panel2.add(kitchen_floorarea_label);
 			panel2.add(kitchen_wallarea_label);
 			
-			panel2.add(diningroom);
+			panel2.add(diningroom_label);
 			panel2.add(diningroomTotal_label);
 			panel2.add(diningroom_floor_total_label);
 			panel2.add(diningroom_paint_total_label);
 			panel2.add(diningroom_floorarea_label);
 			panel2.add(diningroom_wallarea_label);
 			
-			panel2.add(familyroom);
+			panel2.add(familyroom_label);
 			panel2.add(familyroomTotal_label);
 			panel2.add(familyroom_floor_total_label);
 			panel2.add(familyroom_paint_total_label);
 			panel2.add(familyroom_floorarea_label);
 			panel2.add(familyroom_wallarea_label);
 			
-			panel2.add(livingroom);
+			panel2.add(livingroom_label);
 			panel2.add(livingroomTotal_label);
 			panel2.add(livingroom_floor_total_label);
 			panel2.add(livingroom_paint_total_label);
 			panel2.add(livingroom_floorarea_label);
 			panel2.add(livingroom_wallarea_label);
 			
-			panel2.add(bathroom1);
+			panel2.add(bathroom1_label);
 			panel2.add(bathroom1Total_label);
 			panel2.add(bathroom1_floor_total_label);
 			panel2.add(bathroom1_paint_total_label);
 			panel2.add(bathroom1_floorarea_label);
 			panel2.add(bathroom1_wallarea_label);
-			panel2.add(bathroom2);
+			panel2.add(bathroom2_label);
 			panel2.add(bathroom2Total_label);
 			panel2.add(bathroom2_floor_total_label);
 			panel2.add(bathroom2_paint_total_label);
 			panel2.add(bathroom2_floorarea_label);
 			panel2.add(bathroom2_wallarea_label);
 			
-			panel2.add(sub);							//Sub-Total JLabel
-			panel2.add(outputTextsub_field);			//Sub-Total JTextField
+			panel2.add(subtotal_label);					//Sub-Total JLabel
+			panel2.add(subtotal_field);					//Sub-Total JTextField
 			panel2.add(tax_label);						//Tax JLabel
-			panel2.add(outputTexttax_field);			//Tax JTextField
-			panel2.add(gt);								//Grand Total JLabel
-			panel2.add(outputTextGT_field);				//Grand Total JTextField
+			panel2.add(tax_field);						//Tax JTextField
+			panel2.add(grandtotal_label);				//Grand Total JLabel
+			panel2.add(grandtotal_field);				//Grand Total JTextField
 			
 			
 			bedroom1Group.add(bedroom1_tile);
@@ -975,7 +1030,7 @@ public class Depot implements ActionListener
 		
 			panel.add(sub);													//"Sub Total"
 			panel.add(outputTextsub_field);									//"Sub Total" JTextField
-			panel.add(tax_label);											//"Tax"
+			panel.add(tax_);													//"Tax"
 			panel.add(outputTexttax_field);									//"Tax" JTextField
 			panel.add(gt);													//"Grand Total"
 			panel.add(outputTextGT_field);									//"Grand Total" JTextField
